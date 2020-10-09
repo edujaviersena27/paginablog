@@ -1,0 +1,1368 @@
+.swal2-popup.swal2-toast {
+    dirección flexible: fila;
+    alinear-elementos: centro;
+    ancho: auto;
+    acolchado: 0.625em;
+    overflow-y: oculto;
+    fondo: #fff;
+    caja de sombra: 0 0 0.625em # d9d9d9;
+  }
+  .swal2-popup.swal2-toast .swal2-header {
+    dirección flexible: fila;
+  }
+  .swal2-popup.swal2-toast .swal2-title {
+    crecimiento flexible: 1;
+    justificar-contenido: flex-start;
+    margen: 0 0.6em;
+    tamaño de fuente: 1em;
+  }
+  .swal2-popup.swal2-toast .swal2-footer {
+    margen: 0.5em 0 0;
+    acolchado: 0.5em 0 0;
+    tamaño de fuente: 0.8em;
+  }
+  .swal2-popup.swal2-toast .swal2-close {
+    posición: estática;
+    ancho: 0.8em;
+    altura: 0.8em;
+    altura de línea: 0,8;
+  }
+  .swal2-popup.swal2-toast .swal2-content {
+    justificar-contenido: flex-start;
+    tamaño de fuente: 1em;
+  }
+  .swal2-popup.swal2-toast .swal2-icon {
+    ancho: 2em;
+    ancho mínimo: 2em;
+    altura: 2em;
+    margen: 0;
+  }
+  .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
+    pantalla: flex;
+    alinear-elementos: centro;
+    tamaño de fuente: 1.8em;
+    font-weight: negrita;
+  }
+  @media all y (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
+      tamaño de fuente: 0.25em;
+    }
+  }
+  .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+    ancho: 2em;
+    altura: 2em;
+  }
+  .swal2-popup.swal2-toast .swal2-icon.swal2-error [class ^ = swal2-x-mark-line] {
+    superior: 0.875em;
+    ancho: 1.375em;
+  }
+  .swal2-popup.swal2-toast .swal2-icon.swal2-error [class ^ = swal2-x-mark-line] [class $ = left] {
+    izquierda: 0.3125em;
+  }
+  .swal2-popup.swal2-toast .swal2-icon.swal2-error [class ^ = swal2-x-mark-line] [class $ = right] {
+    derecha: 0.3125em;
+  }
+  .swal2-popup.swal2-toast .swal2-actions {
+    base flexible: auto! important;
+    ancho: auto;
+    altura: auto;
+    margen: 0 0.3125em;
+  }
+  .swal2-popup.swal2-toast .swal2-styled {
+    margen: 0 0.3125em;
+    acolchado: 0.3125em 0.625em;
+    tamaño de fuente: 1em;
+  }
+  .swal2-popup.swal2-toast .swal2-styled: focus {
+    sombra de cuadro: 0 0 0 1px #fff, 0 0 0 3px rgba (50, 100, 150, 0.4);
+  }
+  .swal2-popup.swal2-toast .swal2-success {
+    color del borde: # a5dc86;
+  }
+  .swal2-popup.swal2-toast .swal2-success [class ^ = swal2-success-circular-line] {
+    posición: absoluta;
+    ancho: 1.6em;
+    altura: 3em;
+    transformar: rotar (45 grados);
+    radio de borde: 50%;
+  }
+  .swal2-popup.swal2-toast .swal2-success [class ^ = swal2-success-circular-line] [class $ = left] {
+    superior: -0,8em;
+    izquierda: -0,5em;
+    transformar: rotar (-45 grados);
+    origen de transformación: 2em 2em;
+    radio de borde: 4em 0 0 4em;
+  }
+  .swal2-popup.swal2-toast .swal2-success [class ^ = swal2-success-circular-line] [class $ = right] {
+    superior: -0,25em;
+    izquierda: 0.9375em;
+    origen de transformación: 0 1,5em;
+    radio de borde: 0 4em 4em 0;
+  }
+  .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+    ancho: 2em;
+    altura: 2em;
+  }
+  .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+    arriba: 0;
+    izquierda: 0,4375em;
+    ancho: 0.4375em;
+    altura: 2.6875em;
+  }
+  .swal2-popup.swal2-toast .swal2-success [class ^ = swal2-success-line] {
+    altura: 0.3125em;
+  }
+  .swal2-popup.swal2-toast .swal2-success [class ^ = swal2-success-line] [class $ = tip] {
+    superior: 1.125em;
+    izquierda: 0.1875em;
+    ancho: 0.75em;
+  }
+  .swal2-popup.swal2-toast .swal2-success [class ^ = swal2-success-line] [class $ = long] {
+    superior: 0.9375em;
+    derecha: 0.1875em;
+    ancho: 1.375em;
+  }
+  .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip {
+    -webkit-animation: swal2-toast-animate-success-line-tip 0.75s;
+            animación: swal2-toast-animate-success-line-tip 0.75s;
+  }
+  .swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long {
+    -webkit-animation: swal2-toast-animate-success-line-long 0.75s;
+            animación: swal2-toast-animate-success-line-long 0.75s;
+  }
+  .swal2-popup.swal2-toast.swal2-show {
+    -webkit-animation: swal2-toast-show 0.5s;
+            animación: swal2-toast-show 0.5s;
+  }
+  .swal2-popup.swal2-toast.swal2-hide {
+    -webkit-animation: swal2-toast-hide 0.1s hacia adelante;
+            animación: swal2-toast-hide 0.1s hacia adelante;
+  }
+  
+  .swal2-container {
+    pantalla: flex;
+    posición: fija;
+    índice z: 1060;
+    arriba: 0;
+    derecha: 0;
+    abajo: 0;
+    izquierda: 0;
+    dirección flexible: fila;
+    alinear-elementos: centro;
+    justificar-contenido: centro;
+    acolchado: 0.625em;
+    overflow-x: oculto;
+    transición: color de fondo 0,1 s;
+    -webkit-overflow-scrolling: toque;
+  }
+  .swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
+    fondo: rgba (0, 0, 0, 0.4);
+  }
+  .swal2-container.swal2-backdrop-hide {
+    fondo: transparente! importante;
+  }
+  .swal2-container.swal2-top {
+    alinear-elementos: flex-start;
+  }
+  .swal2-container.swal2-top-start, .swal2-container.swal2-top-left {
+    alinear-elementos: flex-start;
+    justificar-contenido: flex-start;
+  }
+  .swal2-container.swal2-top-end, .swal2-container.swal2-top-right {
+    alinear-elementos: flex-start;
+    justificar-contenido: flex-end;
+  }
+  .swal2-container.swal2-center {
+    alinear-elementos: centro;
+  }
+  .swal2-container.swal2-center-start, .swal2-container.swal2-center-left {
+    alinear-elementos: centro;
+    justificar-contenido: flex-start;
+  }
+  .swal2-container.swal2-center-end, .swal2-container.swal2-center-right {
+    alinear-elementos: centro;
+    justificar-contenido: flex-end;
+  }
+  .swal2-container.swal2-bottom {
+    alinear-elementos: flex-end;
+  }
+  .swal2-container.swal2-bottom-start, .swal2-container.swal2-bottom-left {
+    alinear-elementos: flex-end;
+    justificar-contenido: flex-start;
+  }
+  .swal2-container.swal2-bottom-end, .swal2-container.swal2-bottom-right {
+    alinear-elementos: flex-end;
+    justificar-contenido: flex-end;
+  }
+  .swal2-container.swal2-bottom>: primer-hijo, .swal2-container.swal2-bottom-start>: primer-hijo, .swal2-container.swal2-bottom-left>: primer-hijo, .swal2-container .swal2-bottom-end>: primer hijo, .swal2-container.swal2-bottom-right>: primer hijo {
+    margin-top: auto;
+  }
+  .swal2-container.swal2-grow-fullscreen> .swal2-modal {
+    pantalla: flex! important;
+    flexión: 1;
+    align-self: estirar;
+    justificar-contenido: centro;
+  }
+  .swal2-container.swal2-grow-row> .swal2-modal {
+    pantalla: flex! important;
+    flexión: 1;
+    alinear-contenido: centro;
+    justificar-contenido: centro;
+  }
+  .swal2-container.swal2-grow-column {
+    flexión: 1;
+    flex-direction: columna;
+  }
+  .swal2-container.swal2-grow-column.swal2-top, .swal2-container.swal2-grow-column.swal2-center, .swal2-container.swal2-grow-column.swal2-bottom {
+    alinear-elementos: centro;
+  }
+  .swal2-container.swal2-grow-column.swal2-top-start, .swal2-container.swal2-grow-column.swal2-center-start, .swal2-container.swal2-grow-column.swal2-bottom-start , .swal2-container.swal2-grow-column.swal2-top-left, .swal2-container.swal2-grow-column.swal2-center-left, .swal2-container.swal2-grow-column.swal2-bottom- izquierda {
+    alinear-elementos: flex-start;
+  }
+  .swal2-container.swal2-grow-column.swal2-top-end, .swal2-container.swal2-grow-column.swal2-center-end, .swal2-container.swal2-grow-column.swal2-bottom-end , .swal2-container.swal2-grow-column.swal2-top-right, .swal2-container.swal2-grow-column.swal2-center-right, .swal2-container.swal2-grow-column.swal2-bottom- Derecha {
+    alinear-elementos: flex-end;
+  }
+  .swal2-container.swal2-grow-column> .swal2-modal {
+    pantalla: flex! important;
+    flexión: 1;
+    alinear-contenido: centro;
+    justificar-contenido: centro;
+  }
+  .swal2-container.swal2-sin-transición {
+    transición: ninguna! importante;
+  }
+  .swal2-contenedor: not (.swal2-top): not (.swal2-top-start): not (.swal2-top-end): not (.swal2-top-left): not (.swal2-top- right): not (.swal2-center-start): not (.swal2-center-end): not (.swal2-center-left): not (.swal2-center-right): not (.swal2-bottom) : not (.swal2-bottom-start): not (.swal2-bottom-end): not (.swal2-bottom-left): not (.swal2-bottom-right): not (.swal2-grow-fullscreen) > .swal2-modal {
+    margen: automático;
+  }
+  @media all y (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .swal2-container .swal2-modal {
+      margen: 0! importante;
+    }
+  }
+  
+  .swal2-popup {
+    pantalla: ninguna;
+    posición: relativa;
+    tamaño de caja: caja de borde;
+    flex-direction: columna;
+    justificar-contenido: centro;
+    ancho: 32em;
+    ancho máximo: 100%;
+    acolchado: 1.25em;
+    borde: ninguno;
+    radio del borde: 0.3125em;
+    fondo: #fff;
+    font-family: heredar;
+    tamaño de fuente: 1rem;
+  }
+  .swal2-popup: focus {
+    esquema: ninguno;
+  }
+  .swal2-popup.swal2-loading {
+    overflow-y: oculto;
+  }
+  
+  .swal2-header {
+    pantalla: flex;
+    flex-direction: columna;
+    alinear-elementos: centro;
+  }
+  
+  .swal2-title {
+    posición: relativa;
+    ancho máximo: 100%;
+    margen: 0 0 0.4em;
+    acolchado: 0;
+    color: # 595959;
+    tamaño de fuente: 1.875em;
+    peso de fuente: 600;
+    alineación de texto: centro;
+    transformación de texto: ninguna;
+    ajuste de palabra: salto-palabra;
+  }
+  
+  .swal2-actions {
+    pantalla: flex;
+    índice z: 1;
+    envoltura flexible: envoltura;
+    alinear-elementos: centro;
+    justificar-contenido: centro;
+    ancho: 100%;
+    margen: 1,25em automático 0;
+  }
+  .swal2-actions: not (.swal2-loading) .swal2-style [deshabilitado] {
+    opacidad: 0,4;
+  }
+  .swal2-actions: not (.swal2-loading) .swal2-styled: hover {
+    imagen de fondo: gradiente lineal (rgba (0, 0, 0, 0.1), rgba (0, 0, 0, 0.1));
+  }
+  .swal2-actions: not (.swal2-loading) .swal2-style: active {
+    imagen de fondo: gradiente lineal (rgba (0, 0, 0, 0.2), rgba (0, 0, 0, 0.2));
+  }
+  .swal2-actions.swal2-loading .swal2-styled.swal2-confirm {
+    tamaño de caja: caja de borde;
+    ancho: 2.5em;
+    altura: 2.5em;
+    margen: 0,46875em;
+    acolchado: 0;
+    -webkit-animation: swal2-rotate-loading 1.5s lineales 0s infinito normal;
+            animación: swal2-rotate-loading 1.5s lineales 0s infinito normal;
+    borde: 0,25em transparente sólido;
+    radio de borde: 100%;
+    color del borde: transparente;
+    color de fondo: transparente! importante;
+    color: transparente! importante;
+    cursor: predeterminado;
+    -webkit-user-select: ninguno;
+       -moz-user-select: ninguno;
+        -ms-user-select: ninguno;
+            selección de usuario: ninguno;
+  }
+  .swal2-actions.swal2-loading .swal2-styled.swal2-cancel {
+    margen derecho: 30px;
+    margen izquierdo: 30px;
+  }
+  .swal2-actions.swal2-loading: no (estilo .swal2) .swal2-confirm :: after {
+    contenido: "";
+    pantalla: bloque en línea;
+    ancho: 15px;
+    altura: 15px;
+    margen izquierdo: 5px;
+    -webkit-animation: swal2-rotate-loading 1.5s lineales 0s infinito normal;
+            animación: swal2-rotate-loading 1.5s lineales 0s infinito normal;
+    borde: 3px sólido # 999999;
+    radio de borde: 50%;
+    border-right-color: transparente;
+    sombra de cuadro: 1px 1px 1px #fff;
+  }
+  
+  .swal2-styled {
+    margen: 0.3125em;
+    acolchado: 0.625em 2em;
+    sombra de caja: ninguna;
+    peso de fuente: 500;
+  }
+  .swal2-style: not ([disabled]) {
+    cursor: puntero;
+  }
+  .swal2-styled.swal2-confirm {
+    borde: 0;
+    radio del borde: 0.25em;
+    fondo: inicial;
+    color de fondo: # 3085d6;
+    color: #fff;
+    tamaño de fuente: 1.0625em;
+  }
+  .swal2-styled.swal2-cancel {
+    borde: 0;
+    radio del borde: 0.25em;
+    fondo: inicial;
+    color de fondo: #aaa;
+    color: #fff;
+    tamaño de fuente: 1.0625em;
+  }
+  .swal2-style: focus {
+    esquema: ninguno;
+    sombra de cuadro: 0 0 0 1px #fff, 0 0 0 3px rgba (50, 100, 150, 0.4);
+  }
+  .swal2-styled :: - moz-focus-inner {
+    borde: 0;
+  }
+  
+  .swal2-footer {
+    justificar-contenido: centro;
+    margen: 1,25em 0 0;
+    acolchado: 1em 0 0;
+    borde superior: 1px sólido #eee;
+    color: # 545454;
+    tamaño de fuente: 1em;
+  }
+  
+  .swal2-timer-progress-bar-container {
+    posición: absoluta;
+    derecha: 0;
+    abajo: 0;
+    izquierda: 0;
+    altura: 0.25em;
+    desbordamiento: oculto;
+    radio del borde inferior derecho: 0.3125em;
+    radio del borde inferior izquierdo: 0.3125em;
+  }
+  
+  .swal2-timer-progress-bar {
+    ancho: 100%;
+    altura: 0.25em;
+    fondo: rgba (0, 0, 0, 0.2);
+  }
+  
+  .swal2-image {
+    ancho máximo: 100%;
+    margen: 1.25em automático;
+  }
+  
+  .swal2-close {
+    posición: absoluta;
+    índice z: 2;
+    arriba: 0;
+    derecha: 0;
+    alinear-elementos: centro;
+    justificar-contenido: centro;
+    ancho: 1.2em;
+    altura: 1.2em;
+    acolchado: 0;
+    desbordamiento: oculto;
+    transición: color 0,1 s de desaparición;
+    borde: ninguno;
+    radio de borde: 0;
+    fondo: transparente;
+    color: #cccccc;
+    familia de fuentes: serif;
+    tamaño de fuente: 2.5em;
+    altura de línea: 1,2;
+    cursor: puntero;
+  }
+  .swal2-close: hover {
+    transformar: ninguno;
+    fondo: transparente;
+    color: # f27474;
+  }
+  .swal2-close :: - moz-focus-inner {
+    borde: 0;
+  }
+  
+  .swal2-content {
+    índice z: 1;
+    justificar-contenido: centro;
+    margen: 0;
+    acolchado: 0;
+    color: # 545454;
+    tamaño de fuente: 1.125em;
+    font-weight: normal;
+    altura de línea: normal;
+    alineación de texto: centro;
+    ajuste de palabra: salto-palabra;
+  }
+  
+  .swal2-entrada,
+  .swal2-archivo,
+  .swal2-textarea,
+  .swal2-select,
+  .swal2-radio,
+  .swal2-checkbox {
+    margen: 1em automático;
+  }
+  
+  .swal2-entrada,
+  .swal2-archivo,
+  .swal2-textarea {
+    tamaño de caja: caja de borde;
+    ancho: 100%;
+    transición: color de borde 0,3 s, sombra de cuadro 0,3 s;
+    borde: 1px sólido # d9d9d9;
+    radio de borde: 0.1875em;
+    fondo: heredar;
+    sombra de cuadro: recuadro 0 1px 1px rgba (0, 0, 0, 0.06);
+    color: heredar;
+    tamaño de fuente: 1.125em;
+  }
+  .swal2-input.swal2-inputerror,
+  .swal2-file.swal2-inputerror,
+  .swal2-textarea.swal2-inputerror {
+    border-color: # f27474! important;
+    caja-sombra: 0 0 2px # f27474! important;
+  }
+  .swal2-input: foco,
+  .swal2-file: foco,
+  .swal2-textarea: focus {
+    borde: 1px sólido # b4dbed;
+    esquema: ninguno;
+    caja de sombra: 0 0 3px # c4e6f5;
+  }
+  .swal2-input :: - moz-placeholder, .swal2-file :: - moz-placeholder, .swal2-textarea :: - moz-placeholder {
+    color: #cccccc;
+  }
+  .swal2-input: -ms-input-placeholder, .swal2-file: -ms-input-placeholder, .swal2-textarea: -ms-input-placeholder {
+    color: #cccccc;
+  }
+  .swal2-input :: - ms-input-placeholder, .swal2-file :: - ms-input-placeholder, .swal2-textarea :: - ms-input-placeholder {
+    color: #cccccc;
+  }
+  .swal2-input :: marcador de posición,
+  .swal2-file :: marcador de posición,
+  .swal2-textarea :: placeholder {
+    color: #cccccc;
+  }
+  
+  .swal2-range {
+    margen: 1em automático;
+    fondo: #fff;
+  }
+  .swal2-range input {
+    ancho: 80%;
+  }
+  .swal2-range output {
+    ancho: 20%;
+    color: heredar;
+    peso de fuente: 600;
+    alineación de texto: centro;
+  }
+  Entrada de rango .swal2,
+  .swal2-range output {
+    altura: 2.625em;
+    acolchado: 0;
+    tamaño de fuente: 1.125em;
+    altura de línea: 2.625em;
+  }
+  
+  .swal2-input {
+    altura: 2.625em;
+    acolchado: 0 0.75em;
+  }
+  .swal2-input [tipo = número] {
+    ancho máximo: 10em;
+  }
+  
+  .swal2-file {
+    fondo: heredar;
+    tamaño de fuente: 1.125em;
+  }
+  
+  .swal2-textarea {
+    altura: 6.75em;
+    acolchado: 0,75em;
+  }
+  
+  .swal2-select {
+    ancho mínimo: 50%;
+    ancho máximo: 100%;
+    acolchado: 0.375em 0.625em;
+    fondo: heredar;
+    color: heredar;
+    tamaño de fuente: 1.125em;
+  }
+  
+  .swal2-radio,
+  .swal2-checkbox {
+    alinear-elementos: centro;
+    justificar-contenido: centro;
+    fondo: #fff;
+    color: heredar;
+  }
+  .swal2-etiqueta de radio,
+  .swal2-checkbox label {
+    margen: 0 0.6em;
+    tamaño de fuente: 1.125em;
+  }
+  entrada de radio .swal2,
+  .swal2-checkbox input {
+    margen: 0 0.4em;
+  }
+  
+  .swal2-validation-message {
+    pantalla: ninguna;
+    alinear-elementos: centro;
+    justificar-contenido: centro;
+    acolchado: 0.625em;
+    desbordamiento: oculto;
+    fondo: # f0f0f0;
+    color: # 666666;
+    tamaño de fuente: 1em;
+    peso de fuente: 300;
+  }
+  .swal2-validation-message :: before {
+    contenido: "!";
+    pantalla: bloque en línea;
+    ancho: 1.5em;
+    ancho mínimo: 1.5em;
+    altura: 1.5em;
+    margen: 0 0.625em;
+    radio de borde: 50%;
+    color de fondo: # f27474;
+    color: #fff;
+    peso de fuente: 600;
+    altura de línea: 1.5em;
+    alineación de texto: centro;
+  }
+  
+  .swal2-icon {
+    posición: relativa;
+    tamaño de caja: caja de contenido;
+    justificar-contenido: centro;
+    ancho: 5em;
+    altura: 5em;
+    margen: 1.25em automático 1.875em;
+    borde: 0,25em transparente sólido;
+    radio de borde: 50%;
+    font-family: heredar;
+    altura de línea: 5em;
+    cursor: predeterminado;
+    -webkit-user-select: ninguno;
+       -moz-user-select: ninguno;
+        -ms-user-select: ninguno;
+            selección de usuario: ninguno;
+  }
+  .swal2-icon .swal2-icon-content {
+    pantalla: flex;
+    alinear-elementos: centro;
+    tamaño de fuente: 3.75em;
+  }
+  .swal2-icon.swal2-error {
+    color del borde: # f27474;
+    color: # f27474;
+  }
+  .swal2-icon.swal2-error .swal2-x-mark {
+    posición: relativa;
+    crecimiento flexible: 1;
+  }
+  .swal2-icon.swal2-error [class ^ = swal2-x-mark-line] {
+    bloqueo de pantalla;
+    posición: absoluta;
+    superior: 2,3125em;
+    ancho: 2.9375em;
+    altura: 0.3125em;
+    radio de borde: 0.125em;
+    color de fondo: # f27474;
+  }
+  .swal2-icon.swal2-error [class ^ = swal2-x-mark-line] [class $ = left] {
+    izquierda: 1.0625em;
+    transformar: rotar (45 grados);
+  }
+  .swal2-icon.swal2-error [class ^ = swal2-x-mark-line] [class $ = right] {
+    derecha: 1em;
+    transformar: rotar (-45 grados);
+  }
+  .swal2-icon.swal2-error.swal2-icon-show {
+    -webkit-animation: swal2-animate-error-icon 0.5s;
+            animación: swal2-animate-error-icon 0.5s;
+  }
+  .swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark {
+    -webkit-animation: swal2-animate-error-x-mark 0.5s;
+            animación: swal2-animate-error-x-mark 0.5s;
+  }
+  .swal2-icon.swal2-warning {
+    color del borde: # facea8;
+    color: # f8bb86;
+  }
+  .swal2-icon.swal2-info {
+    color del borde: # 9de0f6;
+    color: # 3fc3ee;
+  }
+  .swal2-icon.swal2-question {
+    color del borde: # c9dae1;
+    color: # 87adbd;
+  }
+  .swal2-icon.swal2-success {
+    color del borde: # a5dc86;
+    color: # a5dc86;
+  }
+  .swal2-icon.swal2-success [class ^ = swal2-success-circular-line] {
+    posición: absoluta;
+    ancho: 3.75em;
+    altura: 7.5em;
+    transformar: rotar (45 grados);
+    radio de borde: 50%;
+  }
+  .swal2-icon.swal2-success [class ^ = swal2-success-circular-line] [class $ = left] {
+    superior: -0,4375em;
+    izquierda: -2.0635em;
+    transformar: rotar (-45 grados);
+    origen de transformación: 3.75em 3.75em;
+    radio de borde: 7.5em 0 0 7.5em;
+  }
+  .swal2-icon.swal2-success [class ^ = swal2-success-circular-line] [class $ = right] {
+    superior: -0,6875em;
+    izquierda: 1.875em;
+    transformar: rotar (-45 grados);
+    origen de transformación: 0 3.75em;
+    radio de borde: 0 7.5em 7.5em 0;
+  }
+  .swal2-icon.swal2-success .swal2-success-ring {
+    posición: absoluta;
+    índice z: 2;
+    superior: -0,25em;
+    izquierda: -0,25em;
+    tamaño de caja: caja de contenido;
+    ancho: 100%;
+    altura: 100%;
+    borde: 0,25em de rgba sólido (165, 220, 134, 0,3);
+    radio de borde: 50%;
+  }
+  .swal2-icon.swal2-success .swal2-success-fix {
+    posición: absoluta;
+    índice z: 1;
+    superior: 0.5em;
+    izquierda: 1.625em;
+    ancho: 0.4375em;
+    altura: 5.625em;
+    transformar: rotar (-45 grados);
+  }
+  .swal2-icon.swal2-success [class ^ = swal2-success-line] {
+    bloqueo de pantalla;
+    posición: absoluta;
+    índice z: 2;
+    altura: 0.3125em;
+    radio de borde: 0.125em;
+    color de fondo: # a5dc86;
+  }
+  .swal2-icon.swal2-success [class ^ = swal2-success-line] [class $ = tip] {
+    superior: 2.875em;
+    izquierda: 0.8125em;
+    ancho: 1.5625em;
+    transformar: rotar (45 grados);
+  }
+  .swal2-icon.swal2-success [class ^ = swal2-success-line] [class $ = long] {
+    superior: 2,375em;
+    derecha: 0.5em;
+    ancho: 2.9375em;
+    transformar: rotar (-45 grados);
+  }
+  .swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip {
+    -webkit-animation: swal2-animate-success-line-tip 0.75s;
+            animación: swal2-animate-success-line-tip 0.75s;
+  }
+  .swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long {
+    -webkit-animation: swal2-animate-success-line-long 0.75s;
+            animación: swal2-animate-success-line-long 0.75s;
+  }
+  .swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right {
+    -webkit-animation: swal2-rotate-success-circular-line 4.25s facilidad de entrada;
+            animación: swal2-rotate-success-circular-line 4.25s facilidad de entrada;
+  }
+  
+  .swal2-progress-steps {
+    alinear-elementos: centro;
+    margen: 0 0 1.25em;
+    acolchado: 0;
+    fondo: heredar;
+    peso de fuente: 600;
+  }
+  .swal2-progress-steps li {
+    pantalla: bloque en línea;
+    posición: relativa;
+  }
+  .swal2-progress-steps .swal2-progress-step {
+    índice z: 20;
+    ancho: 2em;
+    altura: 2em;
+    radio de borde: 2em;
+    fondo: # 3085d6;
+    color: #fff;
+    altura de línea: 2em;
+    alineación de texto: centro;
+  }
+  .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
+    background: #3085d6;
+  }
+  .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step {
+    background: #add8e6;
+    color: #fff;
+  }
+  .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step-line {
+    background: #add8e6;
+  }
+  .swal2-progress-steps .swal2-progress-step-line {
+    z-index: 10;
+    width: 2.5em;
+    height: 0.4em;
+    margin: 0 -1px;
+    background: #3085d6;
+  }
+  
+  [class^=swal2] {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .swal2-show {
+    -webkit-animation: swal2-show 0.3s;
+            animation: swal2-show 0.3s;
+  }
+  
+  .swal2-hide {
+    -webkit-animation: swal2-hide 0.15s forwards;
+            animation: swal2-hide 0.15s forwards;
+  }
+  
+  .swal2-noanimation {
+    transition: none;
+  }
+  
+  .swal2-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+  }
+  
+  .swal2-rtl .swal2-close {
+    right: auto;
+    left: 0;
+  }
+  .swal2-rtl .swal2-timer-progress-bar {
+    right: 0;
+    left: auto;
+  }
+  
+  @supports (-ms-accelerator: true) {
+    .swal2-range input {
+      width: 100% !important;
+    }
+    .swal2-range output {
+      display: none;
+    }
+  }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .swal2-range input {
+      width: 100% !important;
+    }
+    .swal2-range output {
+      display: none;
+    }
+  }
+  @-moz-document url-prefix() {
+    .swal2-close:focus {
+      outline: 2px solid rgba(50, 100, 150, 0.4);
+    }
+  }
+  @-webkit-keyframes swal2-toast-show {
+    0% {
+      transform: translateY(-0.625em) rotateZ(2deg);
+    }
+    33% {
+      transform: translateY(0) rotateZ(-2deg);
+    }
+    66% {
+      transform: translateY(0.3125em) rotateZ(2deg);
+    }
+    100% {
+      transform: translateY(0) rotateZ(0deg);
+    }
+  }
+  @keyframes swal2-toast-show {
+    0% {
+      transform: translateY(-0.625em) rotateZ(2deg);
+    }
+    33% {
+      transform: translateY(0) rotateZ(-2deg);
+    }
+    66% {
+      transform: translateY(0.3125em) rotateZ(2deg);
+    }
+    100% {
+      transform: translateY(0) rotateZ(0deg);
+    }
+  }
+  @-webkit-keyframes swal2-toast-hide {
+    100% {
+      transform: rotateZ(1deg);
+      opacity: 0;
+    }
+  }
+  @keyframes swal2-toast-hide {
+    100% {
+      transform: rotateZ(1deg);
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes swal2-toast-animate-success-line-tip {
+    0% {
+      top: 0.5625em;
+      left: 0.0625em;
+      width: 0;
+    }
+    54% {
+      top: 0.125em;
+      left: 0.125em;
+      width: 0;
+    }
+    70% {
+      top: 0.625em;
+      left: -0.25em;
+      width: 1.625em;
+    }
+    84% {
+      top: 1.0625em;
+      left: 0.75em;
+      width: 0.5em;
+    }
+    100% {
+      top: 1.125em;
+      left: 0.1875em;
+      width: 0.75em;
+    }
+  }
+  @keyframes swal2-toast-animate-success-line-tip {
+    0% {
+      top: 0.5625em;
+      left: 0.0625em;
+      width: 0;
+    }
+    54% {
+      top: 0.125em;
+      left: 0.125em;
+      width: 0;
+    }
+    70% {
+      top: 0.625em;
+      left: -0.25em;
+      width: 1.625em;
+    }
+    84% {
+      top: 1.0625em;
+      left: 0.75em;
+      width: 0.5em;
+    }
+    100% {
+      top: 1.125em;
+      left: 0.1875em;
+      width: 0.75em;
+    }
+  }
+  @-webkit-keyframes swal2-toast-animate-success-line-long {
+    0% {
+      top: 1.625em;
+      right: 1.375em;
+      width: 0;
+    }
+    65% {
+      top: 1.25em;
+      right: 0.9375em;
+      width: 0;
+    }
+    84% {
+      top: 0.9375em;
+      right: 0;
+      width: 1.125em;
+    }
+    100% {
+      top: 0.9375em;
+      right: 0.1875em;
+      width: 1.375em;
+    }
+  }
+  @keyframes swal2-toast-animate-success-line-long {
+    0% {
+      top: 1.625em;
+      right: 1.375em;
+      width: 0;
+    }
+    65% {
+      top: 1.25em;
+      right: 0.9375em;
+      width: 0;
+    }
+    84% {
+      top: 0.9375em;
+      right: 0;
+      width: 1.125em;
+    }
+    100% {
+      top: 0.9375em;
+      right: 0.1875em;
+      width: 1.375em;
+    }
+  }
+  @-webkit-keyframes swal2-show {
+    0% {
+      transform: scale(0.7);
+    }
+    45% {
+      transform: scale(1.05);
+    }
+    80% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes swal2-show {
+    0% {
+      transform: scale(0.7);
+    }
+    45% {
+      transform: scale(1.05);
+    }
+    80% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @-webkit-keyframes swal2-hide {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+  }
+  @keyframes swal2-hide {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes swal2-animate-success-line-tip {
+    0% {
+      top: 1.1875em;
+      left: 0.0625em;
+      width: 0;
+    }
+    54% {
+      top: 1.0625em;
+      left: 0.125em;
+      width: 0;
+    }
+    70% {
+      top: 2.1875em;
+      left: -0.375em;
+      width: 3.125em;
+    }
+    84% {
+      top: 3em;
+      left: 1.3125em;
+      width: 1.0625em;
+    }
+    100% {
+      top: 2.8125em;
+      left: 0.8125em;
+      width: 1.5625em;
+    }
+  }
+  @keyframes swal2-animate-success-line-tip {
+    0% {
+      top: 1.1875em;
+      left: 0.0625em;
+      width: 0;
+    }
+    54% {
+      top: 1.0625em;
+      left: 0.125em;
+      width: 0;
+    }
+    70% {
+      top: 2.1875em;
+      left: -0.375em;
+      width: 3.125em;
+    }
+    84% {
+      top: 3em;
+      left: 1.3125em;
+      width: 1.0625em;
+    }
+    100% {
+      top: 2.8125em;
+      left: 0.8125em;
+      width: 1.5625em;
+    }
+  }
+  @-webkit-keyframes swal2-animate-success-line-long {
+    0% {
+      top: 3.375em;
+      right: 2.875em;
+      width: 0;
+    }
+    65% {
+      top: 3.375em;
+      right: 2.875em;
+      width: 0;
+    }
+    84% {
+      top: 2.1875em;
+      right: 0;
+      width: 3.4375em;
+    }
+    100% {
+      top: 2.375em;
+      right: 0.5em;
+      width: 2.9375em;
+    }
+  }
+  @keyframes swal2-animate-success-line-long {
+    0% {
+      top: 3.375em;
+      right: 2.875em;
+      width: 0;
+    }
+    65% {
+      top: 3.375em;
+      right: 2.875em;
+      width: 0;
+    }
+    84% {
+      top: 2.1875em;
+      right: 0;
+      width: 3.4375em;
+    }
+    100% {
+      top: 2.375em;
+      right: 0.5em;
+      width: 2.9375em;
+    }
+  }
+  @-webkit-keyframes swal2-rotate-success-circular-line {
+    0% {
+      transform: rotate(-45deg);
+    }
+    5% {
+      transform: rotate(-45deg);
+    }
+    12% {
+      transform: rotate(-405deg);
+    }
+    100% {
+      transform: rotate(-405deg);
+    }
+  }
+  @keyframes swal2-rotate-success-circular-line {
+    0% {
+      transform: rotate(-45deg);
+    }
+    5% {
+      transform: rotate(-45deg);
+    }
+    12% {
+      transform: rotate(-405deg);
+    }
+    100% {
+      transform: rotate(-405deg);
+    }
+  }
+  @-webkit-keyframes swal2-animate-error-x-mark {
+    0% {
+      margin-top: 1.625em;
+      transform: scale(0.4);
+      opacity: 0;
+    }
+    50% {
+      margin-top: 1.625em;
+      transform: scale(0.4);
+      opacity: 0;
+    }
+    80% {
+      margin-top: -0.375em;
+      transform: scale(1.15);
+    }
+    100% {
+      margin-top: 0;
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes swal2-animate-error-x-mark {
+    0% {
+      margin-top: 1.625em;
+      transform: scale(0.4);
+      opacity: 0;
+    }
+    50% {
+      margin-top: 1.625em;
+      transform: scale(0.4);
+      opacity: 0;
+    }
+    80% {
+      margin-top: -0.375em;
+      transform: scale(1.15);
+    }
+    100% {
+      margin-top: 0;
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes swal2-animate-error-icon {
+    0% {
+      transform: rotateX(100deg);
+      opacity: 0;
+    }
+    100% {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
+  @keyframes swal2-animate-error-icon {
+    0% {
+      transform: rotateX(100deg);
+      opacity: 0;
+    }
+    100% {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes swal2-rotate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes swal2-rotate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+    overflow: hidden;
+  }
+  body.swal2-height-auto {
+    height: auto !important;
+  }
+  body.swal2-no-backdrop .swal2-container {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    max-width: calc(100% - 0.625em * 2);
+    background-color: transparent !important;
+  }
+  body.swal2-no-backdrop .swal2-container > .swal2-modal {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+  body.swal2-no-backdrop .swal2-container.swal2-top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  body.swal2-no-backdrop .swal2-container.swal2-top-start, body.swal2-no-backdrop .swal2-container.swal2-top-left {
+    top: 0;
+    left: 0;
+  }
+  body.swal2-no-backdrop .swal2-container.swal2-top-end, body.swal2-no-backdrop .swal2-container.swal2-top-right {
+    top: 0;
+    right: 0;
+  }
+  body.swal2-no-backdrop .swal2-container.swal2-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  body.swal2-no-backdrop .swal2-container.swal2-center-start, body.swal2-no-backdrop .swal2-container.swal2-center-left {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  body.swal2-no-backdrop .swal2-container.swal2-center-end, body.swal2-no-backdrop .swal2-container.swal2-center-right {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  body.swal2-no-backdrop .swal2-container.swal2-bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  body.swal2-no-backdrop .swal2-container.swal2-bottom-start, body.swal2-no-backdrop .swal2-container.swal2-bottom-left {
+    bottom: 0;
+    left: 0;
+  }
+  body.swal2-no-backdrop .swal2-container.swal2-bottom-end, body.swal2-no-backdrop .swal2-container.swal2-bottom-right {
+    right: 0;
+    bottom: 0;
+  }
+  @media print {
+    body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+      overflow-y: scroll !important;
+    }
+    body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) > [aria-hidden=true] {
+      display: none;
+    }
+    body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container {
+      position: static !important;
+    }
+  }
+  body.swal2-toast-shown .swal2-container {
+    background-color: transparent;
+  }
+  body.swal2-toast-shown .swal2-container.swal2-top {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  body.swal2-toast-shown .swal2-container.swal2-top-end, body.swal2-toast-shown .swal2-container.swal2-top-right {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+  }
+  body.swal2-toast-shown .swal2-container.swal2-top-start, body.swal2-toast-shown .swal2-container.swal2-top-left {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+  }
+  body.swal2-toast-shown .swal2-container.swal2-center-start, body.swal2-toast-shown .swal2-container.swal2-center-left {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  body.swal2-toast-shown .swal2-container.swal2-center {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  body.swal2-toast-shown .swal2-container.swal2-center-end, body.swal2-toast-shown .swal2-container.swal2-center-right {
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    transform: translateY(-50%);
+  }
+  body.swal2-toast-shown .swal2-container.swal2-bottom-start, body.swal2-toast-shown .swal2-container.swal2-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+  }
+  body.swal2-toast-shown .swal2-container.swal2-bottom {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  body.swal2-toast-shown .swal2-container.swal2-bottom-end, body.swal2-toast-shown .swal2-container.swal2-bottom-right {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+  }
+  body.swal2-toast-column .swal2-toast {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  body.swal2-toast-column .swal2-toast .swal2-actions {
+    flex: 1;
+    align-self: stretch;
+    height: 2.2em;
+    margin-top: 0.3125em;
+  }
+  body.swal2-toast-column .swal2-toast .swal2-loading {
+    justify-content: center;
+  }
+  body.swal2-toast-column .swal2-toast .swal2-input {
+    height: 2em;
+    margin: 0.3125em auto;
+    font-size: 1em;
+  }
+  body.swal2-toast-column .swal2-toast .swal2-validation-message {
+    font-size: 1em;
+  }

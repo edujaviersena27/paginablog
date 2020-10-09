@@ -1,0 +1,481 @@
+.select2-container {
+    tamaño de caja: caja de borde;
+    pantalla: bloque en línea;
+    margen: 0;
+    posición: relativa;
+    alineación vertical: medio; }
+    .select2-container .select2-selection - single {
+      tamaño de caja: caja de borde;
+      cursor: puntero;
+      bloqueo de pantalla;
+      altura: 28px;
+      selección de usuario: ninguno;
+      -webkit-user-select: ninguno; }
+      .select2-container .select2-selection - single .select2-selection__rendered {
+        bloqueo de pantalla;
+        padding-left: 8px;
+        padding-right: 20px;
+        desbordamiento: oculto;
+        desbordamiento de texto: puntos suspensivos;
+        espacio en blanco: nowrap; }
+      .select2-container .select2-selection - single .select2-selection__clear {
+        posición: relativa; }
+    .select2-container [dir = "rtl"] .select2-selection - single .select2-selection__rendered {
+      padding-right: 8px;
+      padding-left: 20px; }
+    .select2-container .select2-selection - multiple {
+      tamaño de caja: caja de borde;
+      cursor: puntero;
+      bloqueo de pantalla;
+      altura mínima: 32px;
+      selección de usuario: ninguno;
+      -webkit-user-select: ninguno; }
+      .select2-container .select2-selection - multiple .select2-selection__rendered {
+        pantalla: bloque en línea;
+        desbordamiento: oculto;
+        padding-left: 8px;
+        desbordamiento de texto: puntos suspensivos;
+        espacio en blanco: nowrap; }
+    .select2-container .select2-search - inline {
+      flotador izquierdo; }
+      .select2-container .select2-search - inline .select2-search__field {
+        tamaño de caja: caja de borde;
+        borde: ninguno;
+        tamaño de fuente: 100%;
+        margen superior: 5px;
+        acolchado: 0; }
+        .select2-container .select2-search - inline .select2-search__field :: - webkit-search-cancel-button {
+          -aparición del kit de web: ninguna; }
+  
+  .select2-dropdown {
+    color de fondo: blanco;
+    borde: 1px sólido #aaa;
+    radio del borde: 4px;
+    tamaño de caja: caja de borde;
+    bloqueo de pantalla;
+    posición: absoluta;
+    izquierda: -100000px;
+    ancho: 100%;
+    índice z: 1051; }
+  
+  .select2-results {
+    bloqueo de pantalla; }
+  
+  .select2-results__options {
+    estilo de lista: ninguno;
+    margen: 0;
+    acolchado: 0; }
+  
+  .select2-results__option {
+    relleno: 6px;
+    selección de usuario: ninguno;
+    -webkit-user-select: ninguno; }
+    .select2-results__option [aria-selected] {
+      cursor: puntero; }
+  
+  .select2-container - abre .select2-dropdown {
+    izquierda: 0; }
+  
+  .select2-container - abrir .select2-dropdown - arriba {
+    border-bottom: ninguno;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0; }
+  
+  .select2-container - abrir .select2-dropdown - debajo de {
+    borde superior: ninguno;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+  
+  .select2-search - desplegable {
+    bloqueo de pantalla;
+    relleno: 4px; }
+    .select2-search - menú desplegable .select2-search__field {
+      relleno: 4px;
+      ancho: 100%;
+      tamaño de caja: caja de borde; }
+      .select2-search - menú desplegable .select2-search__field :: - webkit-search-cancel-button {
+        -aparición del kit de web: ninguna; }
+    .select2-search - dropdown.select2-search - ocultar {
+      pantalla: ninguna; }
+  
+  .select2-close-mask {
+    borde: 0;
+    margen: 0;
+    acolchado: 0;
+    bloqueo de pantalla;
+    posición: fija;
+    izquierda: 0;
+    arriba: 0;
+    altura mínima: 100%;
+    ancho mínimo: 100%;
+    altura: auto;
+    ancho: auto;
+    opacidad: 0;
+    índice z: 99;
+    color de fondo: #fff;
+    filtro: alfa (opacidad = 0); }
+  
+  .select2-hidden-access {
+    borde: 0! importante;
+    clip: rect (0 0 0 0)! importante;
+    -webkit-clip-path: recuadro (50%)! importante;
+    clip-path: inserto (50%)! importante;
+    altura: 1px! importante;
+    desbordamiento: oculto! importante;
+    padding: 0! important;
+    posición: absoluta! importante;
+    ancho: 1px! importante;
+    espacio en blanco: nowrap! important; }
+  
+  .select2-container - predeterminado .select2-selection - single {
+    color de fondo: #fff;
+    borde: 1px sólido #aaa;
+    radio del borde: 4px; }
+    .select2-container - predeterminado .select2-selection - single .select2-selection__rendered {
+      color: # 444;
+      altura de línea: 28px; }
+    .select2-container - predeterminado .select2-selection - single .select2-selection__clear {
+      cursor: puntero;
+      flotar derecho;
+      font-weight: negrita; }
+    .select2-container - predeterminado .select2-selection - single .select2-selection__placeholder {
+      color: # 999; }
+    .select2-container - predeterminado .select2-selection - single .select2-selection__arrow {
+      altura: 26px;
+      posición: absoluta;
+      arriba: 1px;
+      derecha: 1px;
+      ancho: 20px; }
+      .select2-container - predeterminado .select2-selection - single .select2-selection__arrow b {
+        border-color: # 888 transparente transparente transparente;
+        estilo de borde: sólido;
+        ancho del borde: 5px 4px 0 4px;
+        altura: 0;
+        izquierda: 50%;
+        margen izquierdo: -4px;
+        margen superior: -2px;
+        posición: absoluta;
+        arriba: 50%;
+        ancho: 0; }
+  
+  .select2-container - predeterminado [dir = "rtl"] .select2-selection - single .select2-selection__clear {
+    flotador izquierdo; }
+  
+  .select2-container - predeterminado [dir = "rtl"] .select2-selection - single .select2-selection__arrow {
+    izquierda: 1px;
+    derecha: auto; }
+  
+  .select2-container - default.select2-container - deshabilitado .select2-selection - single {
+    color de fondo: #eee;
+    cursor: predeterminado; }
+    .select2-container - predeterminado.select2-container - deshabilitado .select2-selection - single .select2-selection__clear {
+      pantalla: ninguna; }
+  
+  .select2-container - default.select2-container - abrir .select2-selection - single .select2-selection__arrow b {
+    border-color: transparente transparente # 888 transparente;
+    ancho del borde: 0 4px 5px 4px; }
+  
+  .select2-container - predeterminado .select2-selection - multiple {
+    color de fondo: blanco;
+    borde: 1px sólido #aaa;
+    radio del borde: 4px;
+    cursor: texto; }
+    .select2-container - predeterminado .select2-selection - multiple .select2-selection__rendered {
+      tamaño de caja: caja de borde;
+      estilo de lista: ninguno;
+      margen: 0;
+      relleno: 0 5px;
+      ancho: 100%; }
+      .select2-container - predeterminado .select2-selection - multiple .select2-selection__rendered li {
+        estilo de lista: ninguno; }
+    .select2-container - predeterminado .select2-selection - multiple .select2-selection__clear {
+      cursor: puntero;
+      flotar derecho;
+      font-weight: negrita;
+      margen superior: 5px;
+      margen derecho: 10px;
+      relleno: 1px; }
+    .select2-container - predeterminado .select2-selection - multiple .select2-selection__choice {
+      color de fondo: # e4e4e4;
+      borde: 1px sólido #aaa;
+      radio del borde: 4px;
+      cursor: predeterminado;
+      flotador izquierdo;
+      margen derecho: 5px;
+      margen superior: 5px;
+      relleno: 0 5px; }
+    .select2-container - predeterminado .select2-selection - multiple .select2-selection__choice__remove {
+      color: # 999;
+      cursor: puntero;
+      pantalla: bloque en línea;
+      font-weight: negrita;
+      margen derecho: 2px; }
+      .select2-container - predeterminado .select2-selection - multiple .select2-selection__choice__remove: hover {
+        color: # 333; }
+  
+  .select2-container - predeterminado [dir = "rtl"] .select2-selection - multiple .select2-selection__choice, .select2-container - default [dir = "rtl"] .select2-selection - multiple .select2- búsqueda - en línea {
+    flotar derecho; }
+  
+  .select2-container - predeterminado [dir = "rtl"] .select2-selection - multiple .select2-selection__choice {
+    margen izquierdo: 5px;
+    margen derecho: automático; }
+  
+  .select2-container - predeterminado [dir = "rtl"] .select2-selection - multiple .select2-selection__choice__remove {
+    margen izquierdo: 2px;
+    margen derecho: automático; }
+  
+  .select2-container - default.select2-container - focus .select2-selection - multiple {
+    borde: negro sólido 1px;
+    contorno: 0; }
+  
+  .select2-container - default.select2-container - deshabilitado .select2-selection - multiple {
+    color de fondo: #eee;
+    cursor: predeterminado; }
+  
+  .select2-container - default.select2-container - deshabilitado .select2-selection__choice__remove {
+    pantalla: ninguna; }
+  
+  .select2-container - default.select2-container - open.select2-container - above .select2-selection - single, .select2-container - default.select2-container - open.select2-container - above .select2-selection - multiple {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+  
+  .select2-container - default.select2-container - open.select2-container - below .select2-selection - single, .select2-container - default.select2-container - open.select2-container - abajo .select2-selection - multiple {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0; }
+  
+  .select2-container - predeterminado .select2-search - desplegable .select2-search__field {
+    borde: 1px sólido #aaa; }
+  
+  .select2-container - predeterminado .select2-search - en línea .select2-search__field {
+    fondo: transparente;
+    borde: ninguno;
+    contorno: 0;
+    sombra de caja: ninguna;
+    -aparición del kit web: campo de texto; }
+  
+  .select2-container - predeterminado .select2-results> .select2-results__options {
+    altura máxima: 200px;
+    desbordamiento-y: automático; }
+  
+  .select2-container - predeterminado .select2-results__option [role = group] {
+    acolchado: 0; }
+  
+  .select2-container - predeterminado .select2-results__option [aria-disabled = true] {
+    color: # 999; }
+  
+  .select2-container - predeterminado .select2-results__option [aria-selected = true] {
+    color de fondo: #ddd; }
+  
+  .select2-container - predeterminado .select2-results__option .select2-results__option {
+    padding-left: 1em; }
+    .select2-container - predeterminado .select2-results__option .select2-results__option .select2-results__group {
+      padding-left: 0; }
+    .select2-container - predeterminado .select2-results__option .select2-results__option .select2-results__option {
+      margen izquierdo: -1em;
+      padding-left: 2em; }
+      .select2-container - predeterminado .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+        margen izquierdo: -2em;
+        padding-left: 3em; }
+        .select2-container - default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+          margen izquierdo: -3em;
+          padding-left: 4em; }
+          .select2-container - default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+            margen izquierdo: -4em;
+            padding-left: 5em; }
+            .select2-container - default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+              margen izquierdo: -5em;
+              padding-left: 6em; }
+  
+  .select2-container - predeterminado .select2-results__option - destacado [aria-selected] {
+    color de fondo: # 5897fb;
+    color blanco; }
+  
+  .select2-container - predeterminado .select2-results__group {
+    cursor: predeterminado;
+    bloqueo de pantalla;
+    relleno: 6px; }
+  
+  .select2-container - clásico .select2-selection - single {
+    color de fondo: # f7f7f7;
+    borde: 1px sólido #aaa;
+    radio del borde: 4px;
+    contorno: 0;
+    imagen de fondo: -webkit-linear-gradient (arriba, blanco 50%, #eeeeee 100%);
+    imagen de fondo: -o-linear-gradient (arriba, blanco 50%, #eeeeee 100%);
+    imagen de fondo: degradado lineal (hacia abajo, blanco 50%, #eeeeee 100%);
+    background-repeat: repeat-x;
+    filtro: progid: DXImageTransform.Microsoft.gradient (startColorstr = '# FFFFFFFF', endColorstr = '# FFEEEEEE', GradientType = 0); }
+    .select2-container - clásico .select2-selection - single: focus {
+      borde: 1px sólido # 5897fb; }
+    .select2-container - clásico .select2-selection - single .select2-selection__rendered {
+      color: # 444;
+      altura de línea: 28px; }
+    .select2-container - clásico .select2-selection - single .select2-selection__clear {
+      cursor: puntero;
+      flotar derecho;
+      font-weight: negrita;
+      margen derecho: 10px; }
+    .select2-container - clásico .select2-selection - single .select2-selection__placeholder {
+      color: # 999; }
+    .select2-container - clásico .select2-selection - single .select2-selection__arrow {
+      color de fondo: #ddd;
+      borde: ninguno;
+      borde izquierdo: 1px sólido #aaa;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      altura: 26px;
+      posición: absoluta;
+      arriba: 1px;
+      derecha: 1px;
+      ancho: 20px;
+      imagen de fondo: -webkit-linear-gradient (arriba, #eeeeee 50%, #cccccc 100%);
+      imagen de fondo: -o-linear-gradient (arriba, #eeeeee 50%, #cccccc 100%);
+      imagen de fondo: degradado lineal (hacia abajo, #eeeeee 50%, #cccccc 100%);
+      background-repeat: repeat-x;
+      filtro: progid: DXImageTransform.Microsoft.gradient (startColorstr = '# FFEEEEEE', endColorstr = '# FFCCCCCC', GradientType = 0); }
+      .select2-container - clásico .select2-selection - single .select2-selection__arrow b {
+        border-color: # 888 transparente transparente transparente;
+        estilo de borde: sólido;
+        ancho del borde: 5px 4px 0 4px;
+        altura: 0;
+        izquierda: 50%;
+        margen izquierdo: -4px;
+        margen superior: -2px;
+        posición: absoluta;
+        arriba: 50%;
+        ancho: 0; }
+  
+  .select2-container - classic [dir = "rtl"] .select2-selection - single .select2-selection__clear {
+    flotador izquierdo; }
+  
+  .select2-container - classic [dir = "rtl"] .select2-selection - single .select2-selection__arrow {
+    borde: ninguno;
+    borde derecho: 1px sólido #aaa;
+    radio de borde: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    izquierda: 1px;
+    derecha: auto; }
+  
+  .select2-container - classic.select2-container - abrir .select2-selection - single {
+    borde: 1px sólido # 5897fb; }
+    .select2-container - classic.select2-container - abrir .select2-selection - single .select2-selection__arrow {
+      fondo: transparente;
+      borde: ninguno; }
+      .select2-container - classic.select2-container - abrir .select2-selection - single .select2-selection__arrow b {
+        border-color: transparente transparente # 888 transparente;
+        ancho del borde: 0 4px 5px 4px; }
+  
+  .select2-container - classic.select2-container - open.select2-container - above .select2-selection - single {
+    borde superior: ninguno;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    imagen de fondo: -webkit-linear-gradient (arriba, blanco 0%, #eeeeee 50%);
+    imagen de fondo: -o-linear-gradient (arriba, blanco 0%, #eeeeee 50%);
+    imagen de fondo: degradado lineal (hacia abajo, blanco 0%, #eeeeee 50%);
+    background-repeat: repeat-x;
+    filtro: progid: DXImageTransform.Microsoft.gradient (startColorstr = '# FFFFFFFF', endColorstr = '# FFEEEEEE', GradientType = 0); }
+  
+  .select2-container - classic.select2-container - open.select2-container - debajo de .select2-selection - single {
+    border-bottom: ninguno;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    imagen de fondo: -webkit-linear-gradient (arriba, #eeeeee 50%, blanco 100%);
+    imagen de fondo: -o-linear-gradient (arriba, #eeeeee 50%, blanco 100%);
+    imagen de fondo: degradado lineal (hacia abajo, #eeeeee 50%, blanco 100%);
+    background-repeat: repeat-x;
+    filtro: progid: DXImageTransform.Microsoft.gradient (startColorstr = '# FFEEEEEE', endColorstr = '# FFFFFFFF', GradientType = 0); }
+  
+  .select2-container - clásico .select2-selection - multiple {
+    color de fondo: blanco;
+    borde: 1px sólido #aaa;
+    radio del borde: 4px;
+    cursor: texto;
+    contorno: 0; }
+    .select2-container - clásico .select2-selection - multiple: focus {
+      borde: 1px sólido # 5897fb; }
+    .select2-container - clásico .select2-selection - multiple .select2-selection__rendered {
+      estilo de lista: ninguno;
+      margen: 0;
+      relleno: 0 5px; }
+    .select2-container - clásico .select2-selection - multiple .select2-selection__clear {
+      pantalla: ninguna; }
+    .select2-container - clásico .select2-selection - multiple .select2-selection__choice {
+      color de fondo: # e4e4e4;
+      borde: 1px sólido #aaa;
+      radio del borde: 4px;
+      cursor: predeterminado;
+      flotador izquierdo;
+      margen derecho: 5px;
+      margen superior: 5px;
+      relleno: 0 5px; }
+    .select2-container - clásico .select2-selection - multiple .select2-selection__choice__remove {
+      color: # 888;
+      cursor: puntero;
+      pantalla: bloque en línea;
+      font-weight: negrita;
+      margen derecho: 2px; }
+      .select2-container - clásico .select2-selection - multiple .select2-selection__choice__remove: hover {
+        color: # 555; }
+  
+  .select2-container - classic [dir = "rtl"] .select2-selection - multiple .select2-selection__choice {
+    flotar derecho;
+    margen izquierdo: 5px;
+    margen derecho: automático; }
+  
+  .select2-container - classic [dir = "rtl"] .select2-selection - multiple .select2-selection__choice__remove {
+    margen izquierdo: 2px;
+    margen derecho: automático; }
+  
+  .select2-container - classic.select2-container - abrir .select2-selection - multiple {
+    borde: 1px sólido # 5897fb; }
+  
+  .select2-container - classic.select2-container - open.select2-container - arriba .select2-selection - multiple {
+    borde superior: ninguno;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+  
+  .select2-container - classic.select2-container - open.select2-container - debajo de .select2-selection - multiple {
+    border-bottom: ninguno;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0; }
+  
+  .select2-container - clásico .select2-search - menú desplegable .select2-search__field {
+    borde: 1px sólido #aaa;
+    contorno: 0; }
+  
+  .select2-container - clásico .select2-search - en línea .select2-search__field {
+    contorno: 0;
+    sombra de caja: ninguna; }
+  
+  .select2-container - clásico .select2-dropdown {
+    color de fondo: blanco;
+    borde: 1px sólido transparente; }
+  
+  .select2-container - clásico .select2-dropdown - arriba {
+    border-bottom: ninguno; }
+  
+  .select2-container - clásico .select2-dropdown - debajo de {
+    borde superior: ninguno; }
+  
+  .select2-container - classic .select2-results> .select2-results__options {
+    altura máxima: 200px;
+    desbordamiento-y: automático; }
+  
+  .select2-container - classic .select2-results__option [role = group] {
+    acolchado: 0; }
+  
+  .select2-container - classic .select2-results__option [aria-disabled = true] {
+    color: gris; }
+  
+  .select2-container - classic .select2-results__option - destacado [aria-selected] {
+    color de fondo: # 3875d7;
+    color blanco; }
+  
+  .select2-container - clásico .select2-results__group {
+    cursor: predeterminado;
+    bloqueo de pantalla;
+    relleno: 6px; }
+  
+  .select2-container - classic.select2-container - abrir .select2-dropdown {
+    color del borde: # 5897fb; }
