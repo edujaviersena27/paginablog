@@ -48,7 +48,7 @@ $(document).ready(function() {
                     template+=
                     `<tr catNombre="${presentacion.categoria}">
                             <td>
-                                <button class="editar-cat btn btn-success" title="Editar categoria" type="button" data-toggle="modal" data-target="#crearpresentacion">
+                                <button class="editar-cat btn btn-success" title="Editar categoria" type="button" data-toggle="modal" data-target="#crearcategoria">
                                     <i class="fas fa-pencil-alt"></i>
                                 </button>
                                 <button class="borrar-cat btn btn-danger" title="Eliminar categoria">
@@ -101,15 +101,15 @@ $(document).ready(function() {
                     if(response=='borrado'){
                         swalWithBootstrapButtons.fire(
                             'Borrado!',
-                            'La presentacion'+nombre+' fue borrada.',
+                            'La categoria'+nombre+' fue borrada.',
                             'success'
                         )
-                        buscar_pre();
+                        buscar_cat();
                     }
                     else {
                         swalWithBootstrapButtons.fire(
                             'Cancelado',
-                            'La presentacion'+nombre+' no se pudo borrar porque está siendo usado en otro producto',
+                            'La categoria'+nombre+' no se pudo borrar porque está siendo usado en otro producto',
                             'error'
                         )
                         buscar_cat();
@@ -120,7 +120,7 @@ $(document).ready(function() {
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
                   swalWithBootstrapButtons.fire(
                     'Cancelado',
-                    'La presentacion '+nombre+' no fue borrada.',
+                    'La categoria '+nombre+' no fue borrada.',
                     'error'
                   )
                   buscar_cat();
