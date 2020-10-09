@@ -4,22 +4,10 @@ $presentacion = new presentacion();
 
 if ($_POST['funcion'] == 'crear') {
     $nombre = $_POST['nombre_categoria'];
-    echo crear($nombre);
+    echo $presentacion->crear($nombre);
 }
 
-function crear($nombre)
-{
 
-    $archivo = fopen('../Data/Categorias.dat', 'a+') or die("Error en registro, consulte con el administrador...");
-    while (!feof($archivo)) {
-
-        fputs($archivo, $nombre . "\n");
-
-        return 'add';
-    }
-
-    fclose($archivo);
-}
 
 if ($_POST['funcion'] == 'buscar') {
     $json = array();

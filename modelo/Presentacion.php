@@ -5,7 +5,19 @@ class presentacion
     var $objetos;
 
  
-
+    function crear($nombre)
+    {
+    
+        $archivo = fopen('../Data/Categorias.dat', 'a+') or die("Error en registro, consulte con el administrador...");
+        while (!feof($archivo)) {
+    
+            fputs($archivo, $nombre . "\n");
+    
+            return 'add';
+        }
+    
+        fclose($archivo);
+    }
 
 
 
