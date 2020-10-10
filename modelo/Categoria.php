@@ -1,6 +1,6 @@
 <?php
 session_start();
-class presentacion
+class categoria
 {
     var $objetos;
 
@@ -19,7 +19,28 @@ class presentacion
         fclose($archivo);
     }
 
+    function buscar () {
+        $json = array();
 
+        $archivo = fopen('../Data/Categorias.dat', 'r') or die("Error de apertura de archivo, consulte con el administrador...");
+        while (!feof($archivo)) {
+    
+            $linea = fgets($archivo);
+            $datos = explode("|", $linea);
+    
+            foreach ($datos as $dato) {
+                $json[] = array(
+    
+                    'categoria' => $dato
+                );
+            }
+        }
+        fclose($archivo);
+    
+    
+        $jsonstring = json_encode($json);
+        return $jsonstring;
+    }
 
 
     function borrar($id)
