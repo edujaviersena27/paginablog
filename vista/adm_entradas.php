@@ -136,13 +136,13 @@ if (isset($_SESSION['usr_role']) != "") {
               </div>
               <div class="form-group row">
                 <div class="col-sm-12">
-                  <label for="laboratorio">Categoria</label>
-                  <select name="laboratorio" id="laboratorio" class="form-control select2" style="width: 100%"></select>
+                  <label for="presentacion">Categoria</label>
+                  <select name="presentacion" id="presentacion" class="form-control select2" style="width: 100%"></select>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-sm-10">
-                  <input type="text" id="sexo" class="form-control" placeholder="ID que se encuentra en el link del video de YouTube">
+                  <input type="text" id="link" class="form-control" placeholder="ID que se encuentra en el link del video de YouTube">
                   <img src="../img/Anotación 2020-07-26 172210.png" alt="" class="">
                 </div>
               </div>
@@ -218,4 +218,4 @@ if (isset($_SESSION['usr_role']) != "") {
   header('Location:../index.php');
 }
 ?>
-<script src="../js/Producto.js"></script>
+<script src="../js/Entrada.js"></script>

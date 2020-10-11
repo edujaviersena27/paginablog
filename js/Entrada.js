@@ -5,15 +5,33 @@ $( document ).ready( function ()
   $( '.select2' ).select2();
   buscar_producto();
 
+  rellenar_presentaciones ();
 
+  function rellenar_presentaciones ()
+  {
+    funcion = "rellenar_presentaciones";
+    $.post( '../controlador/CategoriaController.php', { funcion }, ( response ) =>
+    {
+      console.log(response);
+      const presentaciones = JSON.parse( response );
+      let template = '';
+      presentaciones.forEach( presentacion =>
+      {
+        template += `
+                <option value="${ presentacion.categoria }">${ presentacion.categoria }</option>
+                `;
+      } );
+      $( '#presentacion' ).html( template );
+    } );
+  }
   
 
   $( '#form-crear-entrada' ).submit( e =>
   {
     let titulo = $( '#residencia' ).val();
     let adicional = $( '#adicional' ).val();
-    let categoria = $( '#laboratorio' ).val();
-    let link = $( '#sexo' ).val();
+    let categoria = $( '#presentacion' ).val();
+    let link = $( '#link' ).val();
   
     if ( edit == true )
     {
@@ -23,7 +41,7 @@ $( document ).ready( function ()
       funcion = 'crear';
     }
 
-    $.post( '../controlador/ProductoController.php', { funcion, titulo, adicional, categoria, link}, ( response ) =>
+    $.post( '../controlador/EntradaController.php', { funcion, titulo, adicional, categoria, link}, ( response ) =>
     {
       console.log(response);
       if ( response == 'add' )

@@ -1,20 +1,12 @@
 <?php
-include '../modelo/Producto.php';
-$producto = new producto();
+include '../modelo/Entrada.php';
+$entrada = new entrada();
 if ($_POST['funcion'] == 'crear') {
     $titulo = $_POST['titulo'];
     $adicional = $_POST['adicional'];
     $categoria = $_POST['categoria'];
     $link = $_POST['link'];
-    echo crear($titulo, $adicional, $categoria, $link);
-}
-
-function crear($titulo, $adicional, $categoria, $link) {
-    $archivo = fopen('../Data/Entradas.dat', 'a+') or die("Error en registro, consulte con el administrador...");
-    fputs($archivo, "|" . $titulo . "|" . $adicional . "|" . $categoria ."|" . $link ."\n");
-    fclose($archivo);
-
-    return 'add';
+    echo $entrada->crear($titulo, $adicional, $categoria, $link);
 }
 
 

@@ -47,20 +47,9 @@
               <font style="vertical-align: inherit;">Categorias</font>
             </font>
           </a>
-          <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-            <li><a href="#" class="dropdown-item">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Algo de acción </font>
-                </font>
-              </a></li>
-            <li><a href="#" class="dropdown-item">
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Alguna otra acción</font>
-                </font>
-              </a></li>
-
-            <li class="dropdown-divider"></li>
-          </ul>
+          <ul id="categoria" aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+         
+         </ul>
         </li>
         <form class="form-inline ml-3">
           <div class="input-group input-group-sm">
@@ -163,7 +152,7 @@
               <li class="nav-header">ENTRADAS</li>
 
               <li class="nav-item">
-                <a href="../vista/adm_producto.php" class="nav-link">
+                <a href="../vista/adm_entradas.php" class="nav-link">
                   <i class="nav-icon fas fa-user-cog"></i>
                   <p>
                     Gestión Entradas

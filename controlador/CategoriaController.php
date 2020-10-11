@@ -12,3 +12,8 @@ if ($_POST['funcion'] == 'crear') {
 if ($_POST['funcion'] == 'buscar') {
     echo $categoria->buscar();
 }
+
+if($_POST['funcion']=='rellenar_presentaciones') {
+    echo  $categoria->rellenar_presentaciones();
+ 
+ }

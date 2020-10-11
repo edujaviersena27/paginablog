@@ -1,23 +1,14 @@
 <?php
-class producto
+class entrada
 {
     var $objetos;
  
-    function crear($nombre,$concentracion,$adicional,$precio,$laboratorio,$tipo,$presentacion,$avatar) {
-        $sql = "SELECT id_producto FROM producto where nombre=:nombre and concentracion=:concentracion and adicional=:adicional and prod_lab=:laboratorio and prod_tip_prod=:tipo and prod_present=:presentacion";
-        $query = $this->acceso->prepare($sql);
-        $query->execute(array(':nombre'=>$nombre,':concentracion'=>$concentracion,':adicional'=>$adicional,':laboratorio'=>$laboratorio,':tipo'=>$tipo,':presentacion'=>$presentacion));
-        $this->objetos = $query->fetchall();
-        if(!empty($this->objetos)) {
-            echo 'noadd';
-        }
-        else{
-            $sql = "INSERT INTO producto(nombre,concentracion,adicional,precio,prod_lab,prod_tip_prod,prod_present,avatar) values (:nombre,:concentracion,:adicional,:precio,:laboratorio,:tipo,:presentacion,:avatar);";
-            $query = $this->acceso->prepare($sql);
-            $query->execute(array(':nombre'=>$nombre,':concentracion'=>$concentracion,':adicional'=>$adicional,':precio'=>$precio,':laboratorio'=>$laboratorio,':tipo'=>$tipo,':presentacion'=>$presentacion,':avatar'=>$avatar));
-            echo 'add';
-        }
-
+    function crear($titulo, $adicional, $categoria, $link) {
+        $archivo = fopen('../Data/Entradas.dat', 'a+') or die("Error en registro, consulte con el administrador...");
+        fputs($archivo, "|" . $titulo . "|" . $adicional . "|" . $categoria ."|" . $link ."\n");
+        fclose($archivo);
+    
+        return 'add';
     }
 
     function editar($id,$nombre,$concentracion,$adicional,$precio,$laboratorio,$tipo,$presentacion) {
