@@ -10,10 +10,12 @@ class categoria
     
         $archivo = fopen('../Data/Categorias.dat', 'a+') or die("Error en registro, consulte con el administrador...");
         while (!feof($archivo)) {
+            if($nombre!=null){
+                fputs($archivo, $nombre ."|". "\n");
     
-            fputs($archivo, $nombre ."|". "\n");
-    
-            return 'add';
+                return 'add';
+            }
+           
         }
     
         fclose($archivo);
@@ -28,12 +30,13 @@ class categoria
             $linea = fgets($archivo);
             $datos = explode("|", $linea);
     
-          
-                $json[] = array(
+          if($datos[0]!=null){
+            $json[] = array(
     
-                    'categoria' => $datos[0]
-                );
-         
+                'categoria' => $datos[0]
+            );
+          }
+       
         }
          fclose($archivo);  
     
@@ -74,12 +77,12 @@ class categoria
             $linea = fgets($archivo);
             $datos = explode("|", $linea);
     
-            foreach ($datos as $dato) {
+          if($datos[0]!=null && $datos[0]!="\n")
                 $json[] = array(
     
-                    'categoria' => $dato
+                    'categoria' => $datos[0]
                 );
-            }
+            
         }
         fclose($archivo);
     
