@@ -23,35 +23,8 @@ if ($_POST['funcion'] == 'editar') {
 }
 
 if ($_POST['funcion'] == 'buscar') {
-    $json = array();
-    $producto->buscar();
-   
-    foreach ($producto->objetos as $objeto) {
-        $producto->obtener_stock($objeto->id_producto);
-        foreach($producto->objetos as $obj){
-            $total=$obj->total;
-        }
-        $json[] = array(
-           
-            'id' => $objeto->id_producto,
-            'nombre' => $objeto->nombre,
-            'concentracion' => $objeto->concentracion,
-            'adicional' => $objeto->adicional,
-            'precio' => $objeto->precio,
-            'stock' => $total,
-            'laboratorio' => $objeto->laboratorio,
-            'tipo' => $objeto->tipo,
-            'presentacion' => $objeto->presentacion,
-            'laboratorio_id' => $objeto->prod_lab,
-            'tipo_id' => $objeto->prod_tip_prod,
-            'presentacion_id' => $objeto->prod_present,
-            'avatar' => '../img/prod/' . $objeto->avatar,
-
-        );
-    }
-
-    $jsonstring = json_encode($json);
-    echo $jsonstring;
+    echo $entrada->buscar();
+  
 }
 
 if ($_POST['funcion'] == 'buscar_codigo') {

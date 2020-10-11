@@ -38,9 +38,9 @@ $(document).ready(function() {
             e.preventDefault();
         });
 
-        function buscar_cat(consulta) {
+        function buscar_cat() {
             funcion='buscar';
-            $.post('../controlador/CategoriaController.php',{consulta,funcion},(response) => {
+            $.post('../controlador/CategoriaController.php',{funcion},(response) => {
                 console.log(response);
                 const presentaciones = JSON.parse(response);
                 let template='';

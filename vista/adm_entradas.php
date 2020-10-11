@@ -193,10 +193,8 @@ if (isset($_SESSION['usr_role']) != "") {
               <div class="input-group-append"><button class="btn btn-default"><i class="fas fa-search"></i></button></div>
             </div>
           </div>
-          <div class="card-body">
-            <div id="productos" class="row d-flex align-items-stretch">
-
-            </div>
+          <div  id="productos" class="card-body">
+           
           </div>
           <div class="card-footer">
 
