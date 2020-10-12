@@ -93,7 +93,7 @@ $( document ).ready( function ()
         template += `
         <div class="card">
         <div class="card-header">
-          <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">${ producto.titulo }</font></font></h3>
+          <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">${ producto.titulo } | ${ producto.categoria }</font></font> </h3> 
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Colapso">
@@ -104,19 +104,19 @@ $( document ).ready( function ()
         </div>
         <div class="card-body"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
         ${ producto.adicional }
+        <br>
+        <center>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/${ producto.link }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </center>
         </font></font></div>
         <!-- /.card-body -->
         <div class="card-footer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
         <div class="text-right">
-        <button class="avatar btn btn-sm bg-teal" type="button" data-toggle="modal" data-target="#cambiologo">
-          <i class="fas fa-image"></i>
-        </button>
+        
         <button class="editar btn btn-sm bg-success" type="button" data-toggle="modal" data-target="#crearproducto">
         <i class="fas fa-pencil-alt"></i>
         </button>
-        <button class="lote btn btn-sm bg-primary" type="buttton" data-toggle="modal" data-target="#crearlote">
-          <i class="fas fa-plus"></i>
-        </button>
+   
         <button class="borrar btn btn-sm bg-danger">
           <i class="fas fa-trash-alt"></i>
         </button>

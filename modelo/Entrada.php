@@ -6,10 +6,12 @@ class entrada
     function crear($titulo, $adicional, $categoria, $link)
     {
         $archivo = fopen('../Data/Entradas.dat', 'a+') or die("Error en registro, consulte con el administrador...");
-        fputs($archivo, "|" . $titulo . "|" . $adicional . "|" . $categoria . "|" . $link . "\n");
-        fclose($archivo);
+        while (!feof($archivo)) {
+            fputs($archivo, $titulo . "|" . $adicional . "|" . $categoria . "|" . $link . "|" . "\n");
 
-        return 'add';
+            return 'add';
+        }
+        fclose($archivo);
     }
 
     function editar($id, $nombre, $concentracion, $adicional, $precio, $laboratorio, $tipo, $presentacion)
@@ -38,23 +40,20 @@ class entrada
             $linea = fgets($archivo);
             $datos = explode("|", $linea);
 
-            if( $datos[1]!=null &&  $datos[2]!=null &&  $datos[3]!=null &&  $datos[4]!=null){
+            if ($datos[0] != null && $datos[1] != null && $datos[2] != null && $datos[3] != null) {
                 $json[] = array(
-                    'titulo' => $datos[1],
-                    'adicional' => $datos[2],
-                    'categoria' => $datos[3],
-                    'link' => $datos[4],
-    
+
+                    'titulo' => $datos[0],
+                    'adicional' => $datos[1],
+                    'categoria' => $datos[2],
+                    'link' => $datos[3]
                 );
-                $jsonstring = json_encode($json);
-                return $jsonstring;
-              
             }
-          
-           
         }
         fclose($archivo);
-       
+
+        $jsonstring = json_encode($json);
+        return $jsonstring;
     }
 
     function buscar_codigo()

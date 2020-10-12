@@ -23,7 +23,11 @@ if ($_POST['funcion'] == 'editar') {
 }
 
 if ($_POST['funcion'] == 'buscar') {
-    echo $entrada->buscar();
+   
+     echo $entrada->buscar();
+     
+    
+    
   
 }
 
