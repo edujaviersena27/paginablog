@@ -91,7 +91,7 @@ include_once 'layouts/nav.php';
                                     <div class="card-header">
                                         <div class="card-title">Buscar categoria <button type="button" data-toggle="modal" data-target="#crearcategoria" class="btn bg-gradient-primary btn-sm m-2">Crear categoria</button></div>
                                         <div class="input-group">
-                                            <input id="buscar-categoria" type="text" class="form-control float-left" placeholder="Ingrese nombre">
+                                            <input id="buscar-categoria" type="text" class="form-control float-left" placeholder="Ingrese nombre de la categoria">
                                             <div class="input-group-append">
                                                 <button class="btn btn-default"><i class="fas fa-search"></i></button>
                                             </div>

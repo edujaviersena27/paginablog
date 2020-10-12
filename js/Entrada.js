@@ -3,7 +3,7 @@ $( document ).ready( function ()
   var funcion = '';
   var edit = false;
   $( '.select2' ).select2();
-  buscar_producto();
+  buscar_entrada();
 
   rellenar_presentaciones();
 
@@ -50,7 +50,7 @@ $( document ).ready( function ()
         $( '#add' ).show( 1000 );
         $( '#add' ).hide( 2000 );
         $( '#form-crear-entrada' ).trigger( 'reset' );
-        buscar_producto();
+        buscar_entrada();
       }
       if ( response == 'edit' )
       {
@@ -58,7 +58,7 @@ $( document ).ready( function ()
         $( '#edit_prod' ).show( 1000 );
         $( '#edit_prod' ).hide( 2000 );
         $( '#form-crear-entrada' ).trigger( 'reset' );
-        buscar_producto();
+        buscar_entrada();
       }
       if ( response == 'noadd' )
       {
@@ -80,20 +80,20 @@ $( document ).ready( function ()
     e.preventDefault();
   } );
 
-  function buscar_producto ()
+  function buscar_entrada ()
   {
     funcion = "buscar";
     $.post( '../controlador/EntradaController.php', { funcion }, ( response ) =>
     {
       console.log( response );
-      const productos = JSON.parse( response );
+      const entradas = JSON.parse( response );
       let template = '';
-      productos.forEach( producto =>
+      entradas.forEach( entrada =>
       {
         template += `
-        <div class="card">
+        <div class="card" entTitulo="${entrada.titulo}" entAdicional="${entrada.adicional}" entCateogria="${entrada.categoria}" entLink="${entrada.link}" >
         <div class="card-header">
-          <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">${ producto.titulo } | ${ producto.categoria }</font></font> </h3> 
+          <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">${ entrada.titulo } | ${ entrada.categoria }</font></font> </h3> 
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Colapso">
@@ -103,10 +103,10 @@ $( document ).ready( function ()
           </div>
         </div>
         <div class="card-body"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-        ${ producto.adicional }
+        <div>${ entrada.adicional }</div>
         <br>
         <center>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/${ producto.link }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/${ entrada.link }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </center>
         </font></font></div>
         <!-- /.card-body -->
@@ -126,7 +126,7 @@ $( document ).ready( function ()
       </div>
                 `;
       } );
-      $( '#productos' ).html( template );
+      $( '#entradas' ).html( template );
     } )
   }
 
@@ -136,102 +136,36 @@ $( document ).ready( function ()
     let valor = $( this ).val();
     if ( valor != "" )
     {
-      buscar_producto( valor );
+      buscar_entrada( valor );
     }
     else
     {
-      buscar_producto();
+      buscar_entrada();
     }
   } );
-
-
-$( document ).on( 'click', '.avatar', ( e ) =>
-{
-  funcion = 'cambiar_avatar';
-  const elemento = $( this )[ 0 ].activeElement.parentElement.parentElement.parentElement.parentElement;
-  const id = $( elemento ).attr( 'prodId' );
-  const avatar = $( elemento ).attr( 'prodAvatar' );
-  const nombre = $( elemento ).attr( 'prodNombre' );
-  $( '#funcion' ).val( funcion );
-  $( '#id_logo_prod' ).val( id );
-  $( '#avatar' ).val( avatar );
-  $( '#logoactual' ).attr( 'src', avatar );
-  $( '#nombre_logo' ).html( nombre );
-} );
-
-$( document ).on( 'click', '.lote', ( e ) =>
-{
-  const elemento = $( this )[ 0 ].activeElement.parentElement.parentElement.parentElement.parentElement;
-  const id = $( elemento ).attr( 'prodId' );
-  const nombre = $( elemento ).attr( 'prodNombre' );
-
-  $( '#id_lote_prod' ).val( id );
-  $( '#nombre_producto_lote' ).html( nombre );
-} );
-
-$( '#form-logo' ).submit( e =>
-{
-  let formData = new FormData( $( '#form-logo' )[ 0 ] );
-  $.ajax( {
-    url: "../controlador/ProductoController.php",
-    type: "POST",
-    data: formData,
-    cache: false,
-    processData: false,
-    contentType: false
-  } ).done( function ( response )
-  {
-    let json = JSON.parse( response );
-    if ( json.alert == 'edit' )
-    {
-      $( '#logoactual' ).attr( 'src', json.ruta );
-      $( '#edit' ).hide( 'slow' );
-      $( '#edit' ).show( 1000 );
-      $( '#edit' ).hide( 2000 );
-      $( '#form-logo' ).trigger( 'reset' );
-      buscar_producto();
-    } else
-    {
-      $( '#noedit' ).hide( 'slow' );
-      $( '#noedit' ).show( 1000 );
-      $( '#noedit' ).hide( 2000 );
-      $( '#form-logo' ).trigger( 'reset' );
-    }
-  } );
-  e.preventDefault();
-} );
 
 
 $( document ).on( 'click', '.editar', ( e ) =>
 {
-  const elemento = $( this )[ 0 ].activeElement.parentElement.parentElement.parentElement.parentElement;
-  const id = $( elemento ).attr( 'prodId' );
-  const nombre = $( elemento ).attr( 'prodNombre' );
-  const concentracion = $( elemento ).attr( 'prodConcentracion' );
-  const adicional = $( elemento ).attr( 'prodAdicional' );
-  const precio = $( elemento ).attr( 'prodPrecio' );
-  const laboratorio = $( elemento ).attr( 'prodLaboratorio' );
-  const tipo = $( elemento ).attr( 'prodTipo' );
-  const presentacion = $( elemento ).attr( 'prodPresentacion' );
+  const elemento = $( this )[ 0 ].activeElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+  const titulo = $( elemento ).attr( 'entTitulo' );
+  const adicional = $( elemento ).attr( 'entAdicional' );
+  const categoria = $( elemento ).attr( 'entCategoria' );
+  const link = $( elemento ).attr( 'entLink' );
 
-  $( '#id_edit_prod' ).val( id );
-  $( '#nombre_producto' ).val( nombre );
-  $( '#concentracion' ).val( concentracion );
+
+  $( '#residencia' ).val( titulo );
   $( '#adicional' ).val( adicional );
-  $( '#precio' ).val( precio );
-  $( '#laboratorio' ).val( laboratorio ).trigger( 'change' );
-  $( '#tipo' ).val( tipo ).trigger( 'change' );
-  $( '#presentacion' ).val( presentacion ).trigger( 'change' );
+  $( '#presentacion' ).val( categoria ).trigger( 'change' );
+  $( '#link' ).val( link );
   edit = true;
 } );
 
 $( document ).on( 'click', '.borrar', ( e ) =>
 {
   funcion = 'borrar';
-  const elemento = $( this )[ 0 ].activeElement.parentElement.parentElement.parentElement.parentElement;
-  const id = $( elemento ).attr( 'prodId' );
-  const nombre = $( elemento ).attr( 'prodNombre' );
-  const avatar = $( elemento ).attr( 'prodAvatar' );
+  const elemento = $( this )[ 0 ].activeElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+  const titulo = $( elemento ).attr( 'entTitulo' );
   const swalWithBootstrapButtons = Swal.mixin( {
     customClass: {
       confirmButton: 'btn btn-success',
@@ -241,11 +175,9 @@ $( document ).on( 'click', '.borrar', ( e ) =>
   } )
 
   swalWithBootstrapButtons.fire( {
-    title: 'Desea eliminar ' + nombre + '?',
+    title: 'Desea eliminar ' + titulo + '?',
     text: "No podrá revertir esto!",
-    imageUrl: '' + avatar + '',
-    imageWidth: 100,
-    imageHeight: 100,
+    icon:'warning',
     showCancelButton: true,
     confirmButtonText: 'si, borrar esto!',
     cancelButtonText: 'No, cancelar!',
@@ -261,16 +193,16 @@ $( document ).on( 'click', '.borrar', ( e ) =>
         {
           swalWithBootstrapButtons.fire(
             'Borrado!',
-            'El producto ' + nombre + ' fue borrado.',
+            'La entrada ' + titulo + ' fue borrada.',
             'success'
           )
-          buscar_producto();
+          buscar_entrada();
         }
         else
         {
           swalWithBootstrapButtons.fire(
             'Cancelado',
-            'El producto ' + nombre + ' no se pudo borrar porque está siendo usado en otro lote',
+            'La entrada ' + titulo + ' no se pudo borrar',
             'error'
           )
         }
@@ -281,31 +213,12 @@ $( document ).on( 'click', '.borrar', ( e ) =>
     {
       swalWithBootstrapButtons.fire(
         'Cancelado',
-        'El producto ' + nombre + ' no fue borrado.',
+        'La entrada ' + titulo + ' no fue borrada.',
         'error'
       )
     }
   } );
 
-} );
-
-$( '#form-crear-lote' ).submit( e =>
-{
-  let id_producto = $( '#id_lote_prod' ).val();
-  let proveedor = $( '#proveedor' ).val();
-  let stock = $( '#stock' ).val();
-  let vencimiento = $( '#vencimiento' ).val();
-  funcion = 'crear';
-  $.post( '../controlador/LoteController.php', { funcion, id_producto, proveedor, stock, vencimiento }, ( response ) =>
-  {
-    $( '#add-lote' ).hide( 'slow' );
-    $( '#add-lote' ).show( 1000 );
-    $( '#add-lote' ).hide( 2000 );
-    $( '#form-crear-lote' ).trigger( 'reset' );
-    buscar_producto();
-  } );
-
-  e.preventDefault();
 } );
 
 } )

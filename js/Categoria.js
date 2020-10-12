@@ -42,11 +42,11 @@ $(document).ready(function() {
             funcion='buscar';
             $.post('../controlador/CategoriaController.php',{funcion},(response) => {
                 console.log(response);
-                const presentaciones = JSON.parse(response);
+                const categorias = JSON.parse(response);
                 let template='';
-                presentaciones.forEach(presentacion => {
+                categorias.forEach(categoria => {
                     template+=
-                    `<tr catNombre="${presentacion.categoria}">
+                    `<tr catNombre="${categoria.categoria}">
                             <td>
                                 <button class="editar-cat btn btn-success" title="Editar categoria" type="button" data-toggle="modal" data-target="#crearcategoria">
                                     <i class="fas fa-pencil-alt"></i>
@@ -55,7 +55,7 @@ $(document).ready(function() {
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </td>
-                            <td>${presentacion.categoria}</td>
+                            <td>${categoria.categoria}</td>
                         </tr>
                     `;
                 });

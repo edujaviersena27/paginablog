@@ -27,31 +27,22 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <!-- Default box -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Título</font></font></h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Colapso">
-                    <i class="fas fa-minus"></i></button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Eliminar">
-                    <i class="fas fa-times"></i></button>
-                </div>
-              </div>
-              <div class="card-body"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                ¡Comienza a crear tu increíble aplicación!
-              </font></font></div>
-              <!-- /.card-body -->
-              <div class="card-footer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                Pie de página
-              </font></font></div>
-              <!-- /.card-footer-->
+    <div class="container-fluid">
+        <div class="card card-success">
+          <div class="card-header">
+            <h1 class="card-title">Buscar entrada</h1>
+            <div class="input-group">
+              <input id="buscar-producto" type="text" class="form-control float-left" placeholder="Ingrese el nombre de la entrada">
+              <div class="input-group-append"><button class="btn btn-default"><i class="fas fa-search"></i></button></div>
             </div>
-            <!-- /.card -->
+          </div>
+          <div class="card-body">
+            <div id="entradas">
+
+            </div>
+          </div>
+          <div class="card-footer">
+
           </div>
         </div>
       </div>
@@ -63,7 +54,7 @@
   <?php
   include_once 'layouts/footer.php';
   ?>
-
+<script src="../js/Catalogo.js" ></script>
 
 
 
