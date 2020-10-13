@@ -48,22 +48,12 @@ class categoria
 
     function borrar($id)
     {
-        $sql = "DELETE FROM presentacion where id_presentacion=:id";
-        $query = $this->acceso->prepare($sql);
-        $query->execute(array(':id' => $id));
-        if (!empty($query->execute(array(':id' => $id)))) {
-            echo 'borrado';
-        } else {
-            echo 'noborrado';
-        }
+      
     }
 
     function editar($nombre, $id_editado)
     {
-        $sql = "UPDATE presentacion SET nombre=:nombre where id_presentacion=:id";
-        $query = $this->acceso->prepare($sql);
-        $query->execute(array(':id' => $id_editado, ':nombre' => $nombre));
-        echo 'edit';
+      
     }
 
     function rellenar_presentaciones()
