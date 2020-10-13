@@ -51,11 +51,14 @@ if (isset($_POST['signup'])) {
     while (!feof($archivo) and $ok == 0) {
       $linea = fgets($archivo);
       $datos = explode("|", $linea);
-      $lastname = $datos[0];
-      $mail = $datos[1];
-      $active = $datos[2];
-      $role = $datos[3];
-      $passwd = $datos[4];
+      if($datos[0]!=null && $datos[1]!=null && $datos[2]!=null && $datos[3]!=null && $datos[4]!=null) {
+        $lastname = $datos[0];
+        $mail = $datos[1];
+        $active = $datos[2];
+        $role = $datos[3];
+        $passwd = $datos[4];
+      }
+   
 
 
       if ($email == $mail) {

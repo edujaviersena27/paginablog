@@ -1,5 +1,6 @@
 $( document ).ready( function ()
 {
+  
   var funcion = '';
   var edit = false;
   $( '.select2' ).select2();
@@ -32,7 +33,7 @@ $( document ).ready( function ()
     let adicional = $( '#adicional' ).val();
     let categoria = $( '#presentacion' ).val();
     let link = $( '#link' ).val();
-
+    console.log(edit);
     if ( edit == true )
     {
       funcion = 'editar';
@@ -74,7 +75,6 @@ $( document ).ready( function ()
         $( '#noadd' ).hide( 2000 );
         $( '#form-crear-entrada' ).trigger( 'reset' );
       }
-      edit = false;
     } );
 
     e.preventDefault();
@@ -90,8 +90,8 @@ $( document ).ready( function ()
       let template = '';
       entradas.forEach( entrada =>
       {
-        template += `
-        <div class="card" entTitulo="${entrada.titulo}" entAdicional="${entrada.adicional}" entCateogria="${entrada.categoria}" entLink="${entrada.link}" >
+          template += `
+        <div class="card" entTitulo="${ entrada.titulo }" entAdicional="${ entrada.adicional }" entCateogria="${ entrada.categoria }" entLink="${ entrada.link }" >
         <div class="card-header">
           <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">${ entrada.titulo } | ${ entrada.categoria }</font></font> </h3> 
 
@@ -111,24 +111,51 @@ $( document ).ready( function ()
         </font></font></div>
         <!-- /.card-body -->
         <div class="card-footer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-        <div class="text-right">
-        
+        <center>subido por : ${ entrada.username }</center>
+        <div class="text-right">`;
+        if((`${ entrada.username }`)== `${ entrada.usuario }`){
+        template+=`
         <button class="editar btn btn-sm bg-success" type="button" data-toggle="modal" data-target="#crearproducto">
         <i class="fas fa-pencil-alt"></i>
         </button>
    
         <button class="borrar btn btn-sm bg-danger">
           <i class="fas fa-trash-alt"></i>
-        </button>
+        </button>`;
+        }
+        template+=`
       </div>
         </font></font></div>
         <!-- /.card-footer-->
       </div>
                 `;
+        
       } );
+
       $( '#entradas' ).html( template );
-    } )
+
+    } );
+
+
+    funcion = 'tipo_usuario';
+    $.post( '../controlador/UsuarioController.php', { funcion }, ( response ) =>
+    {
+      if ( response == 1 )
+      {
+        $( '#gestion_lote' ).hide();
+      }
+      else if ( response == 2 )
+      {
+        $( '#gestion_lote' ).hide();
+        $( '#gestion_usuario' ).hide();
+        $( '#gestion_producto' ).hide();
+        $( '#gestion_atributo' ).hide();
+        $( '#gestion_proveedor' ).hide();
+      }
+    } );
   }
+
+
 
 
   $( document ).on( 'keyup', '#buscar-producto', function ()
@@ -145,80 +172,81 @@ $( document ).ready( function ()
   } );
 
 
-$( document ).on( 'click', '.editar', ( e ) =>
-{
-  const elemento = $( this )[ 0 ].activeElement.parentElement.parentElement.parentElement.parentElement.parentElement;
-  const titulo = $( elemento ).attr( 'entTitulo' );
-  const adicional = $( elemento ).attr( 'entAdicional' );
-  const categoria = $( elemento ).attr( 'entCategoria' );
-  const link = $( elemento ).attr( 'entLink' );
-
-
-  $( '#residencia' ).val( titulo );
-  $( '#adicional' ).val( adicional );
-  $( '#presentacion' ).val( categoria ).trigger( 'change' );
-  $( '#link' ).val( link );
-  edit = true;
-} );
-
-$( document ).on( 'click', '.borrar', ( e ) =>
-{
-  funcion = 'borrar';
-  const elemento = $( this )[ 0 ].activeElement.parentElement.parentElement.parentElement.parentElement.parentElement;
-  const titulo = $( elemento ).attr( 'entTitulo' );
-  const swalWithBootstrapButtons = Swal.mixin( {
-    customClass: {
-      confirmButton: 'btn btn-success',
-      cancelButton: 'btn btn-danger mr-1'
-    },
-    buttonsStyling: false
-  } )
-
-  swalWithBootstrapButtons.fire( {
-    title: 'Desea eliminar ' + titulo + '?',
-    text: "No podrá revertir esto!",
-    icon:'warning',
-    showCancelButton: true,
-    confirmButtonText: 'si, borrar esto!',
-    cancelButtonText: 'No, cancelar!',
-    reverseButtons: true
-  } ).then( ( result ) =>
+  $( document ).on( 'click', '.editar', ( e ) =>
   {
-    if ( result.value )
-    {
-      $.post( '../controlador/ProductoController.php', { id, funcion }, ( response ) =>
-      {
-        edit = false;
-        if ( response == 'borrado' )
-        {
-          swalWithBootstrapButtons.fire(
-            'Borrado!',
-            'La entrada ' + titulo + ' fue borrada.',
-            'success'
-          )
-          buscar_entrada();
-        }
-        else
-        {
-          swalWithBootstrapButtons.fire(
-            'Cancelado',
-            'La entrada ' + titulo + ' no se pudo borrar',
-            'error'
-          )
-        }
-      } )
+    const elemento = $( this )[ 0 ].activeElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+    const titulo = $( elemento ).attr( 'entTitulo' );
+    const adicional = $( elemento ).attr( 'entAdicional' );
+    const categoria = $( elemento ).attr( 'entCategoria' );
+    const link = $( elemento ).attr( 'entLink' );
 
 
-    } else if ( result.dismiss === Swal.DismissReason.cancel )
-    {
-      swalWithBootstrapButtons.fire(
-        'Cancelado',
-        'La entrada ' + titulo + ' no fue borrada.',
-        'error'
-      )
-    }
+    $( '#residencia' ).val( titulo );
+    $( '#adicional' ).val( adicional );
+    $( '#presentacion' ).val( categoria ).trigger( 'change' );
+    $( '#link' ).val( link );
+    edit = true;
   } );
 
-} );
+  $( document ).on( 'click', '.borrar', ( e ) =>
+  {
+    funcion = 'borrar';
+    const elemento = $( this )[ 0 ].activeElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+    const titulo = $( elemento ).attr( 'entTitulo' );
+    const swalWithBootstrapButtons = Swal.mixin( {
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger mr-1'
+      },
+      buttonsStyling: false
+    } )
+
+    swalWithBootstrapButtons.fire( {
+      title: 'Desea eliminar ' + titulo + '?',
+      text: "No podrá revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'si, borrar esto!',
+      cancelButtonText: 'No, cancelar!',
+      reverseButtons: true
+    } ).then( ( result ) =>
+    {
+      if ( result.value )
+      {
+        $.post( '../controlador/EntradaController.php', {titulo,  funcion }, ( response ) =>
+        {
+          console.log(response);
+          edit = false;
+          if ( response == 'borrado' )
+          {
+            swalWithBootstrapButtons.fire(
+              'Borrado!',
+              'La entrada ' + titulo + ' fue borrada.',
+              'success'
+            )
+            buscar_entrada();
+          }
+          else
+          {
+            swalWithBootstrapButtons.fire(
+              'Cancelado',
+              'La entrada ' + titulo + ' no se pudo borrar',
+              'error'
+            )
+          }
+        } )
+
+
+      } else if ( result.dismiss === Swal.DismissReason.cancel )
+      {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'La entrada ' + titulo + ' no fue borrada.',
+          'error'
+        )
+      }
+    } );
+
+  } );
 
 } )

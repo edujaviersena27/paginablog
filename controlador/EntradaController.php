@@ -1,33 +1,29 @@
 <?php
 include '../modelo/Entrada.php';
 $entrada = new entrada();
+
 if ($_POST['funcion'] == 'crear') {
     $titulo = $_POST['titulo'];
     $adicional = $_POST['adicional'];
     $categoria = $_POST['categoria'];
     $link = $_POST['link'];
-    echo $entrada->crear($titulo, $adicional, $categoria, $link);
+    $username = $_SESSION['usr_name'];
+    echo $entrada->crear($titulo, $adicional, $categoria, $link, $username);
 }
 
 
 if ($_POST['funcion'] == 'editar') {
-    $id=$_POST['id'];
-    $nombre = $_POST['nombre'];
-    $concentracion = $_POST['concentracion'];
+    $titulo = $_POST['titulo'];
     $adicional = $_POST['adicional'];
-    $precio = $_POST['precio'];
-    $laboratorio = $_POST['laboratorio'];
-    $tipo = $_POST['tipo'];
-    $presentacion = $_POST['presentacion'];
-    $producto->editar($id,$nombre, $concentracion, $adicional, $precio, $laboratorio, $tipo, $presentacion);
+    $categoria = $_POST['categoria'];
+    $link = $_POST['link'];
+    $username = $_SESSION['usr_name'];
+    echo $entrada->editar($titulo, $adicional, $categoria, $link, $username);
 }
 
-if ($_POST['funcion'] == 'buscar') {
+if ($_POST['funcion'] == 'buscar') { 
    
      echo $entrada->buscar();
-     
-    
-    
   
 }
 
@@ -95,8 +91,8 @@ if ($_POST['funcion'] == 'cambiar_avatar') {
 
 
 if($_POST['funcion']=='borrar') {
-    $id=$_POST['id'];
-    $producto->borrar($id);
+    $titulo=$_POST['titulo'];
+    $entrada->borrar($titulo);
 }
 
 if ($_POST['funcion'] == 'buscar_id') {

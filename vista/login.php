@@ -29,7 +29,8 @@ if (isset($_POST['login'])) {
     $active = $datos[2];
     $role = $datos[3];
     $passwd = $datos[4];
-    //		var_dump($linea);
+ 
+    //		var_dump($inea);
     //		var_dump($email);
     //		var_dump($password); 
     //		var_dump(md5($password));
