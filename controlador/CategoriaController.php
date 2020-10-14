@@ -4,7 +4,8 @@ $categoria = new categoria();
 
 if ($_POST['funcion'] == 'crear') {
     $nombre = $_POST['nombre_categoria'];
-    echo $categoria->crear($nombre);
+   $nombreCategoria=strtoupper($nombre);
+    echo $categoria->crear($nombreCategoria);
 }
 
 

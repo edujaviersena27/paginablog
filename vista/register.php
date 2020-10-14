@@ -15,7 +15,8 @@ $error = false;
 
 //check if form is submitted
 if (isset($_POST['signup'])) {
-  $name = $_POST['name'];
+  $nombre = $_POST['name'];
+  $name = strtoupper($nombre);
   $email = $_POST['email'];
   $password = $_POST['password'];
   $cpassword = $_POST['cpassword'];

@@ -51,7 +51,7 @@ $(document).ready(function(){
   
 
   
-    $( document ).on( 'keyup', '#buscar-producto', function ()
+    $( document ).on( 'keyup', '#buscar-entrada', function ()
     {
       let valor = $( this ).val();
       if ( valor != "" )

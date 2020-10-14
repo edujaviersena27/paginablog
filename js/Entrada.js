@@ -22,16 +22,16 @@ $( document ).ready( function ()
                 <option value="${ presentacion.categoria }">${ presentacion.categoria }</option>
                 `;
       } );
-      $( '#presentacion' ).html( template );
+      $( '#categoria' ).html( template );
     } );
   }
 
 
   $( '#form-crear-entrada' ).submit( e =>
   {
-    let titulo = $( '#residencia' ).val();
+    let titulo = $( '#titulo' ).val();
     let adicional = $( '#adicional' ).val();
-    let categoria = $( '#presentacion' ).val();
+    let categoria = $( '#categoria' ).val();
     let link = $( '#link' ).val();
     console.log(edit);
     if ( edit == true )
@@ -119,7 +119,8 @@ $( document ).ready( function ()
         <i class="fas fa-pencil-alt"></i>
         </button>
    
-        <button class="borrar btn btn-sm bg-danger">
+        <button href="../modelo/Entrada.php?action=delete&id='${ entrada.titulo }'" class="borrar btn btn-sm bg-danger">
+
           <i class="fas fa-trash-alt"></i>
         </button>`;
         }
@@ -138,19 +139,19 @@ $( document ).ready( function ()
 
 
     funcion = 'tipo_usuario';
-    $.post( '../controlador/UsuarioController.php', { funcion }, ( response ) =>
+    $.post( '../controlador/EntradaController.php', { funcion }, ( response ) =>
     {
       if ( response == 1 )
       {
-        $( '#gestion_lote' ).hide();
+        $( '#' ).hide();
       }
       else if ( response == 2 )
       {
-        $( '#gestion_lote' ).hide();
-        $( '#gestion_usuario' ).hide();
-        $( '#gestion_producto' ).hide();
-        $( '#gestion_atributo' ).hide();
-        $( '#gestion_proveedor' ).hide();
+        $( '#' ).hide();
+        $( '#' ).hide();
+        $( '#' ).hide();
+        $( '#' ).hide();
+        $( '#' ).hide();
       }
     } );
   }
@@ -158,7 +159,7 @@ $( document ).ready( function ()
 
 
 
-  $( document ).on( 'keyup', '#buscar-producto', function ()
+  $( document ).on( 'keyup', '#buscar-entrada', function ()
   {
     let valor = $( this ).val();
     if ( valor != "" )
@@ -181,9 +182,9 @@ $( document ).ready( function ()
     const link = $( elemento ).attr( 'entLink' );
 
 
-    $( '#residencia' ).val( titulo );
+    $( '#titulo' ).val( titulo );
     $( '#adicional' ).val( adicional );
-    $( '#presentacion' ).val( categoria ).trigger( 'change' );
+    $( '#categoria' ).val( categoria ).trigger( 'change' );
     $( '#link' ).val( link );
     edit = true;
   } );

@@ -33,8 +33,8 @@ if (isset($_SESSION['usr_role']) != "") {
               <div class="form-group row">
 
                 <div class="col-sm-12">
-                  <label for="residencia" ">Titulo</label>
-                  <input type=" text" id="residencia" class="form-control">
+                  <label for="titulo" ">Titulo</label>
+                  <input type=" text" id="titulo" class="form-control">
                 </div>
               </div>
               <div class="form-group row">
@@ -46,8 +46,8 @@ if (isset($_SESSION['usr_role']) != "") {
               </div>
               <div class="form-group row">
                 <div class="col-sm-12">
-                  <label for="presentacion">Categoria</label>
-                  <select name="presentacion" id="presentacion" class="form-control select2" style="width: 100%"></select>
+                  <label for="categoria">Categoria</label>
+                  <select name="categoria" id="categoria" class="form-control select2" style="width: 100%"></select>
                 </div>
               </div>
               <div class="form-group row">
@@ -99,7 +99,7 @@ if (isset($_SESSION['usr_role']) != "") {
           <div class="card-header">
             <h1 class="card-title">Buscar Entrada</h1>
             <div class="input-group">
-              <input id="buscar-producto" type="text" class="form-control float-left" placeholder="Ingrese nombre de la entrada">
+              <input id="buscar-entrada" type="text" class="form-control float-left" placeholder="Ingrese nombre de la entrada">
               <div class="input-group-append"><button class="btn btn-default"><i class="fas fa-search"></i></button></div>
             </div>
           </div>

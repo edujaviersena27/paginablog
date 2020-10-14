@@ -32,7 +32,7 @@
           <div class="card-header">
             <h1 class="card-title">Buscar entrada</h1>
             <div class="input-group">
-              <input id="buscar-producto" type="text" class="form-control float-left" placeholder="Ingrese el nombre de la entrada">
+              <input id="buscar-entrada" type="text" class="form-control float-left" placeholder="Ingrese el nombre de la entrada">
               <div class="input-group-append"><button class="btn btn-default"><i class="fas fa-search"></i></button></div>
             </div>
           </div>
