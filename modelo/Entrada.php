@@ -64,16 +64,6 @@ class entrada
     function borrar($titulo)
     {
 
-         
-/// aqui va la logica de eliminar
-// recorre el archivo , guarda en $linea la linea del mismo
-// y luego compara lo que se encuentran en la posición 2, que es el DNI con el $_GET que contiene
-// el Documento pasado por parametros --> sugerencia se podría pasar encriptado para mejorar
-// si no es el que buscamos graba en el archivo nuevo, cuando es igual lo saltea y coloca en true
-// la bandera para de borrado para indicar q lo ha encontrado
-// cierra los archivos de trabajo y temporal, con unlink borra el anterior y con rename
-// renombra con el que trabajamos y lo deja como nuevo archivo de datos real, siempre que pueda realizarlo
-// tanto unlink como rename devuelve true si pudo realizar la acción
 
             $delete = false;
             $myfile = fopen('../Data/Entradas.dat', 'a+') or die("Error en registro, consulte con el administrador...");

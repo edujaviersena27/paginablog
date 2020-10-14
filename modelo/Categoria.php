@@ -46,9 +46,42 @@ class categoria
     }
 
 
-    function borrar($id)
+    function borrar($nombreCat)
     {
-      
+
+
+            $delete = false;
+            $myfile = fopen('../Data/Categorias.dat', 'a+') or die("Error en registro, consulte con el administrador...");
+            $bkfile = fopen("../Data/Categorias.bkp", "w+") or die("No se puede abrir el archivo de trabajo!");
+            while(!feof($myfile)) {
+                $linea = fgets($myfile);
+                $datos=explode("|", $linea);
+                
+                if (strcmp(trim($datos[0]),trim($nombreCat))!=0 )
+                {
+                    fputs($bkfile,$linea);
+                }
+                else{
+                    $delete = true;
+                }
+            }
+            fclose($myfile);
+            fclose($bkfile);
+            if (unlink ("../Data/Categorias.dat")){
+                rename ("../Data/Categorias.bkp","../Data/Categorias.dat");	
+            }
+            else{
+                echo 'noborrado';		
+            }
+        
+////					
+            if($delete){
+                    echo 'borrado';
+            }else{
+                    echo 'noborrado';
+            }				
+
+
     }
 
     function editar($nombre, $id_editado)

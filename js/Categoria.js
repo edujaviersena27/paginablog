@@ -75,7 +75,7 @@ $(document).ready(function() {
         $(document).on('click','.borrar-cat',(e)=>{
             funcion='borrar';
             const elemento=$(this)[0].activeElement.parentElement.parentElement;
-            const id=$(elemento).attr('catId');
+           
             const nombre=$(elemento).attr('catNombre');
             const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {
@@ -95,7 +95,7 @@ $(document).ready(function() {
                 reverseButtons: true
               }).then((result) => {
                 if (result.value) {
-                $.post('../controlador/PresentacionController.php',{id,funcion},(response) => {
+                $.post('../controlador/CategoriaController.php',{nombre,funcion},(response) => {
                     edit=false;
                     console.log(response);
                     if(response=='borrado'){
@@ -132,9 +132,9 @@ $(document).ready(function() {
           $(document).on('click','.editar-cat',(e)=>{
             funcion='editar';
             const elemento=$(this)[0].activeElement.parentElement.parentElement;
-            const id=$(elemento).attr('catId');
+            
             const nombre=$(elemento).attr('catNombre');
-            $('#id_editar_cat').val(id);
+          
             $('#nombre-categoria').val(nombre);        
             edit=true;       
           })

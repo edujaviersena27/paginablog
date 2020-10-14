@@ -46,8 +46,8 @@ if (isset($_SESSION['usr_role']) != "") {
               </div>
               <div class="form-group row">
                 <div class="col-sm-12">
-                  <label for="categoria">Categoria</label>
-                  <select name="categoria" id="categoria" class="form-control select2" style="width: 100%"></select>
+                  <label for="presentacion">Categoria</label>
+                  <select name="presentacion" id="presentacion" class="form-control select2" style="width: 100%"></select>
                 </div>
               </div>
               <div class="form-group row">

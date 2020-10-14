@@ -14,15 +14,15 @@ $( document ).ready( function ()
     $.post( '../controlador/CategoriaController.php', { funcion }, ( response ) =>
     {
       console.log( response );
-      const presentaciones = JSON.parse( response );
+      const categorias = JSON.parse( response );
       let template = '';
-      presentaciones.forEach( presentacion =>
+      categorias.forEach( categoria =>
       {
         template += `
-                <option value="${ presentacion.categoria }">${ presentacion.categoria }</option>
+                <option value="${ categoria.categoria }">${ categoria.categoria }</option>
                 `;
       } );
-      $( '#categoria' ).html( template );
+      $( '#presentacion' ).html( template );
     } );
   }
 
@@ -31,7 +31,7 @@ $( document ).ready( function ()
   {
     let titulo = $( '#titulo' ).val();
     let adicional = $( '#adicional' ).val();
-    let categoria = $( '#categoria' ).val();
+    let categoria = $( '#presentacion' ).val();
     let link = $( '#link' ).val();
     console.log(edit);
     if ( edit == true )
@@ -119,8 +119,7 @@ $( document ).ready( function ()
         <i class="fas fa-pencil-alt"></i>
         </button>
    
-        <button href="../modelo/Entrada.php?action=delete&id='${ entrada.titulo }'" class="borrar btn btn-sm bg-danger">
-
+        <button class="borrar btn btn-sm bg-danger">
           <i class="fas fa-trash-alt"></i>
         </button>`;
         }

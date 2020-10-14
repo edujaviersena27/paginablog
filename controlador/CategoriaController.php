@@ -18,3 +18,9 @@ if($_POST['funcion']=='rellenar_presentaciones') {
     echo  $categoria->rellenar_presentaciones();
  
  }
+
+ if($_POST['funcion']=='borrar') {
+    $nombreCat=$_POST['nombre'];
+    echo  $categoria->borrar($nombreCat);
+ 
+ }
