@@ -1,8 +1,8 @@
 $( document ).ready( function ()
 {
-  
+
   var funcion = '';
-  var edit = false;
+  var edit=false;
   $( '.select2' ).select2();
   buscar_entrada();
 
@@ -33,16 +33,16 @@ $( document ).ready( function ()
     let adicional = $( '#adicional' ).val();
     let categoria = $( '#presentacion' ).val();
     let link = $( '#link' ).val();
-    console.log(edit);
-    if ( edit == true )
-    {
-      funcion = 'editar';
-    } else
-    {
-      funcion = 'crear';
-    }
+    let edit_ent = $( '#id_editar_ent' ).val();
+  
 
-    $.post( '../controlador/EntradaController.php', { funcion, titulo, adicional, categoria, link }, ( response ) =>
+    if(edit==false){
+      funcion='crear';
+  }else{
+      funcion='editar';
+  }
+  
+    $.post( '../controlador/EntradaController.php', { funcion, titulo, adicional, categoria, link, edit_ent }, ( response ) =>
     {
       console.log( response );
       if ( response == 'add' )
@@ -53,14 +53,7 @@ $( document ).ready( function ()
         $( '#form-crear-entrada' ).trigger( 'reset' );
         buscar_entrada();
       }
-      if ( response == 'edit' )
-      {
-        $( '#edit_prod' ).hide( 'slow' );
-        $( '#edit_prod' ).show( 1000 );
-        $( '#edit_prod' ).hide( 2000 );
-        $( '#form-crear-entrada' ).trigger( 'reset' );
-        buscar_entrada();
-      }
+  
       if ( response == 'noadd' )
       {
         $( '#noadd' ).hide( 'slow' );
@@ -68,13 +61,24 @@ $( document ).ready( function ()
         $( '#noadd' ).hide( 2000 );
         $( '#form-crear-entrada' ).trigger( 'reset' );
       }
+
+      if ( response == 'edit' )
+      {
+        $( '#edit' ).hide( 'slow' );
+        $( '#edit' ).show( 1000 );
+        $( '#edit' ).hide( 2000 );
+        $( '#form-crear-entrada' ).trigger( 'reset' );
+        buscar_entrada();
+      }
+   
       if ( response == 'noedit' )
       {
-        $( '#noadd' ).hide( 'slow' );
-        $( '#noadd' ).show( 1000 );
-        $( '#noadd' ).hide( 2000 );
+        $( '#noedit' ).hide( 'slow' );
+        $( '#noedit' ).show( 1000 );
+        $( '#noedit' ).hide( 2000 );
         $( '#form-crear-entrada' ).trigger( 'reset' );
       }
+      edit==false;
     } );
 
     e.preventDefault();
@@ -90,7 +94,7 @@ $( document ).ready( function ()
       let template = '';
       entradas.forEach( entrada =>
       {
-          template += `
+        template += `
         <div class="card" entTitulo="${ entrada.titulo }" entAdicional="${ entrada.adicional }" entCateogria="${ entrada.categoria }" entLink="${ entrada.link }" >
         <div class="card-header">
           <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">${ entrada.titulo } | ${ entrada.categoria }</font></font> </h3> 
@@ -113,8 +117,9 @@ $( document ).ready( function ()
         <div class="card-footer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
         <center>subido por : ${ entrada.username }</center>
         <div class="text-right">`;
-        if((`${ entrada.username }`)== `${ entrada.usuario }`){
-        template+=`
+        if ( ( `${ entrada.username }` ) == `${ entrada.usuario }` )
+        {
+          template += `
         <button class="editar btn btn-sm bg-success" type="button" data-toggle="modal" data-target="#crearproducto">
         <i class="fas fa-pencil-alt"></i>
         </button>
@@ -123,13 +128,13 @@ $( document ).ready( function ()
           <i class="fas fa-trash-alt"></i>
         </button>`;
         }
-        template+=`
+        template += `
       </div>
         </font></font></div>
         <!-- /.card-footer-->
       </div>
                 `;
-        
+
       } );
 
       $( '#entradas' ).html( template );
@@ -181,11 +186,17 @@ $( document ).ready( function ()
     const link = $( elemento ).attr( 'entLink' );
 
 
+
+
     $( '#titulo' ).val( titulo );
     $( '#adicional' ).val( adicional );
     $( '#categoria' ).val( categoria ).trigger( 'change' );
     $( '#link' ).val( link );
-    edit = true;
+    
+    $( '#id_editar_ent' ).val( titulo );
+    edit=true; 
+ 
+
   } );
 
   $( document ).on( 'click', '.borrar', ( e ) =>
@@ -213,9 +224,9 @@ $( document ).ready( function ()
     {
       if ( result.value )
       {
-        $.post( '../controlador/EntradaController.php', {titulo,  funcion }, ( response ) =>
+        $.post( '../controlador/EntradaController.php', { titulo, funcion }, ( response ) =>
         {
-          console.log(response);
+          console.log( response );
           edit = false;
           if ( response == 'borrado' )
           {

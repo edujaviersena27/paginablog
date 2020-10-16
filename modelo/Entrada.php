@@ -15,11 +15,38 @@ class entrada
         fclose($archivo);
     }
 
-    function editar($titulo, $adicional, $categoria, $link, $username)
+    function editar($titulo, $adicional, $categoria, $link, $username, $edit_ent)
     {
-        echo 'edit';
-        echo 'noedit';
+        $delete = false;
+        $myfile = fopen('../Data/Entradas.dat', 'a+') or die("Error en registro, consulte con el administrador...");
+        $bkfile = fopen("../Data/Entradas.bkp", "w+") or die("No se puede abrir el archivo de trabajo!");
+        while (!feof($myfile)) {
+            $linea = fgets($myfile);
+            $datos = explode("|", $linea);
+
+            if (strcmp(trim($datos[0]), trim($edit_ent)) != 0) {
+                fputs($bkfile, $linea);
+            } else {
+                fputs($bkfile, $titulo . "|" . $adicional . "|" . $categoria . "|" . $link . "|" . $username . "|" . "\n");
+                $delete = true;
+            }
+        }
+        fclose($myfile);
+        fclose($bkfile);
+        if (unlink("../Data/Entradas.dat")) {
+            rename("../Data/Entradas.bkp", "../Data/Entradas.dat");
+        }
+
+        ////					
+        if ($delete) {
+            echo 'edit';
+        } else {
+            echo 'noedit';
+        }
     }
+
+
+
 
     function buscar()
     {
@@ -36,7 +63,7 @@ class entrada
 
             if ($datos[0] != null && $datos[1] != null && $datos[2] != null && $datos[3] != null && $datos[4] != null) {
 
-             
+
 
                 $json[] = array(
 
@@ -48,7 +75,6 @@ class entrada
                     'usuario' => $_SESSION['usr_name']
                 );
             }
-
         }
         fclose($archivo);
 
@@ -65,38 +91,34 @@ class entrada
     {
 
 
-            $delete = false;
-            $myfile = fopen('../Data/Entradas.dat', 'a+') or die("Error en registro, consulte con el administrador...");
-            $bkfile = fopen("../Data/Entradas.bkp", "w+") or die("No se puede abrir el archivo de trabajo!");
-            while(!feof($myfile)) {
-                $linea = fgets($myfile);
-                $datos=explode("|", $linea);
-                
-                if (strcmp(trim($datos[0]),trim($titulo))!=0 )
-                {
-                    fputs($bkfile,$linea);
-                }
-                else{
-                    $delete = true;
-                }
-            }
-            fclose($myfile);
-            fclose($bkfile);
-            if (unlink ("../Data/Entradas.dat")){
-                rename ("../Data/Entradas.bkp","../Data/Entradas.dat");	
-            }
-            else{
-                echo 'noborrado';		
-            }
-        
-////					
-            if($delete){
-                    echo 'borrado';
-            }else{
-                    echo 'noborrado';
-            }				
+        $delete = false;
+        $myfile = fopen('../Data/Entradas.dat', 'a+') or die("Error en registro, consulte con el administrador...");
+        $bkfile = fopen("../Data/Entradas.bkp", "w+") or die("No se puede abrir el archivo de trabajo!");
+        while (!feof($myfile)) {
+            $linea = fgets($myfile);
+            $datos = explode("|", $linea);
 
+            if (strcmp(trim($datos[0]), trim($titulo)) != 0) {
+                fputs($bkfile, $linea);
+            } else {
+                $delete = true;
+            }
+        }
+        fclose($myfile);
+        fclose($bkfile);
+        if (unlink("../Data/Entradas.dat")) {
+            rename("../Data/Entradas.bkp", "../Data/Entradas.dat");
+        } else {
+            echo 'noborrado';
+        }
 
+        ////					
+        if ($delete) {
+            echo 'borrado';
+        } else {
+            echo 'noborrado';
+        }
     }
 
 }
+

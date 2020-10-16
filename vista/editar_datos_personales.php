@@ -72,7 +72,7 @@ if(isset($_SESSION['usr_role']) != "") {
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="../vista/index.php">Home</a></li>
+              <li class="breadcrumb-item"><a href="../vista/index2.php">Home</a></li>
               <li class="breadcrumb-item active">Datos Personales</li>
             </ol>
           </div>

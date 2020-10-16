@@ -2,12 +2,12 @@ $(document).ready(function(){
 
     $('#cat-carrito').show();
     var funcion;
-    buscar_entrada();
+    buscar_entradas();
    
 
-    function buscar_entrada ()
+    function buscar_entradas ()
     {
-      funcion = "buscar";
+      funcion = "buscar_entrada";
       $.post( '../controlador/EntradaController.php', { funcion }, ( response ) =>
       {
         console.log( response );
@@ -37,7 +37,7 @@ $(document).ready(function(){
           <!-- /.card-body -->
           <div class="card-footer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
           <div class="text-right">
-          
+          <center>subido por : ${ entrada.usuario }</center>
       
         </div>
           </font></font></div>
@@ -56,11 +56,11 @@ $(document).ready(function(){
       let valor = $( this ).val();
       if ( valor != "" )
       {
-        buscar_entrada( valor );
+        buscar_entradas( valor );
       }
       else
       {
-        buscar_entrada();
+        buscar_entradas();
       }
     } );
   

@@ -28,6 +28,13 @@ if (isset($_SESSION['usr_role']) != "") {
             <div class="alert alert-danger text-center" id="noadd" style="display:none;">
               <span><i class="fas fa-times m-1"></i>Edicion deshabilitada</span>
             </div>
+
+            <div class="alert alert-success text-center" id="edit" style="display:none;">
+              <span><i class="fas fa-check m-1"></i>guardado!!</span>
+            </div>
+            <div class="alert alert-danger text-center" id="noedit" style="display:none;">
+              <span><i class="fas fa-times m-1"></i>Edicion deshabilitada</span>
+            </div>
             <form id="form-crear-entrada" class="form-horizontal">
 
               <div class="form-group row">
@@ -35,6 +42,7 @@ if (isset($_SESSION['usr_role']) != "") {
                 <div class="col-sm-12">
                   <label for="titulo" ">Titulo</label>
                   <input type=" text" id="titulo" class="form-control">
+                  <input type="hidden" id="id_editar_ent">
                 </div>
               </div>
               <div class="form-group row">
@@ -86,7 +94,7 @@ if (isset($_SESSION['usr_role']) != "") {
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+              <li class="breadcrumb-item"><a href="index2.php">Home</a></li>
               <li class="breadcrumb-item active">Gestion Entradas</li>
             </ol>
           </div>

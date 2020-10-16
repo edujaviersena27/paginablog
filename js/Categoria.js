@@ -46,7 +46,9 @@ $(document).ready(function() {
                 let template='';
                 categorias.forEach(categoria => {
                     template+=
-                    `<tr catNombre="${categoria.categoria}">
+                    `<tr catNombre="${categoria.categoria}">`;
+                    if(`${ categoria.username }`== `${ categoria.usuario }`){
+                        template+=`
                             <td>
                                 <button class="editar-cat btn btn-success" title="Editar categoria" type="button" data-toggle="modal" data-target="#crearcategoria">
                                     <i class="fas fa-pencil-alt"></i>
@@ -54,7 +56,14 @@ $(document).ready(function() {
                                 <button class="borrar-cat btn btn-danger" title="Eliminar categoria">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
-                            </td>
+                            </td>`;
+                    }else {
+                        template+=`
+                        <td>
+                         
+                        </td>`;
+                    }
+                    template+=`
                             <td>${categoria.categoria}</td>
                         </tr>
                     `;

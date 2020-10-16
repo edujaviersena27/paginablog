@@ -5,12 +5,14 @@ $categoria = new categoria();
 if ($_POST['funcion'] == 'crear') {
     $nombre = $_POST['nombre_categoria'];
    $nombreCategoria=strtoupper($nombre);
-    echo $categoria->crear($nombreCategoria);
+   $username = $_SESSION['usr_name'];
+    echo $categoria->crear($nombreCategoria, $username);
 }
 
 
 
 if ($_POST['funcion'] == 'buscar') {
+   
     echo $categoria->buscar();
 }
 

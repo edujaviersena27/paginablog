@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['usr_role']) != "") {
   echo '<script type="text/javascript"> ;
-		window.location.href="index.php";</script>';
+		window.location.href="../vista/index.php";</script>';
   // no funciona	en algunas ocaciones	header("Location: index.php");
 }
 
@@ -54,7 +54,7 @@ if (isset($_POST['login'])) {
     $_SESSION['usr_role'] = $role;
     $_SESSION['usr_name'] = $lastname;
     echo '<script type="text/javascript"> alert("Conexion exitosa");
-			window.location.href="index.php";</script>';
+			window.location.href="index2.php";</script>';
     //		<script>window.location="http://localhost:8000/ExampleLoginPHP/index.php";</script>
   }
 }

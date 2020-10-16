@@ -15,17 +15,25 @@ if ($_POST['funcion'] == 'crear') {
 
 if ($_POST['funcion'] == 'editar') {
     $titulo = $_POST['titulo'];
+    $nombreTitulo= strtoupper($titulo);
     $adicional = $_POST['adicional'];
     $categoria = $_POST['categoria'];
     $link = $_POST['link'];
+    $edit_ent = $_POST['edit_ent'];
     $username = $_SESSION['usr_name'];
-    echo $entrada->editar($titulo, $adicional, $categoria, $link, $username);
+    echo $entrada->editar($nombreTitulo, $adicional, $categoria, $link, $username, $edit_ent);
 }
 
 if ($_POST['funcion'] == 'buscar') { 
    
      echo $entrada->buscar();
   
+}
+
+if ($_POST['funcion'] == 'buscar_entrada') { 
+   
+    echo $entrada->buscar();
+ 
 }
 
 

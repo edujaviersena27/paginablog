@@ -48,8 +48,8 @@
             </font>
           </a>
           <ul id="categoria" aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-         
-         </ul>
+
+          </ul>
         </li>
         <form class="form-inline ml-3">
           <div class="input-group input-group-sm">
@@ -91,17 +91,19 @@
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-      <!-- Brand Logo -->
-      <a href="../vista/index.php" class="brand-link">
-        <img src="../img/logo2.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Home</span>
-      </a>
 
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <?php
-        if (isset($_SESSION['usr_role']) != "") {
-        ?>
+      <?php
+      if (isset($_SESSION['usr_role']) != "") {
+      ?>
+        <!-- Brand Logo -->
+        <a href="../vista/index2.php" class="brand-link">
+          <img src="../img/logo2.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+          <span class="brand-text font-weight-light">Home</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+
           <!-- Sidebar user (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
@@ -117,7 +119,7 @@
             </div>
           </div>
         <?php
-        }
+      }
         ?>
 
         <!-- Sidebar Menu -->
