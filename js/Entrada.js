@@ -78,7 +78,7 @@ $( document ).ready( function ()
         $( '#noedit' ).hide( 2000 );
         $( '#form-crear-entrada' ).trigger( 'reset' );
       }
-      edit==false;
+      edit=false;
     } );
 
     e.preventDefault();
