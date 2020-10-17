@@ -51,7 +51,9 @@ $(document).ready(function() {
                 const categorias = JSON.parse(response);
                 let template='';
                 categorias.forEach(categoria => {
-                    if(`${ categoria.username }`== `${ categoria.usuario }`){
+
+                    let rol= `${ categoria.rol }`;
+                    if((`${ categoria.username }` == `${ categoria.usuario }`) && (`${ categoria.rol }` == '1') ){
                     template+=
                     `<tr catNombre="${categoria.categoria}">
                    
@@ -69,6 +71,25 @@ $(document).ready(function() {
                             <td>${categoria.categoria}</td>
                         </tr>
                     `;
+                    }else if(rol=='2'){
+                        template+=
+                        `<tr catNombre="${categoria.categoria}">
+                       
+                           
+                                <td>
+                                    <button class="editar-cat btn btn-success" title="Editar categoria" type="button" data-toggle="modal" data-target="#crearcategoria">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </button>
+                                    <button class="borrar-cat btn btn-danger" title="Eliminar categoria">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                       
+                       
+                                <td>${categoria.categoria}</td>
+                            </tr>
+                        `;
+
                     }
                 });
                 $('#categorias').html(template);

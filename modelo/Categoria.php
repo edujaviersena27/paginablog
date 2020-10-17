@@ -35,7 +35,8 @@ class categoria
 
                     'categoria' => $datos[0],
                     'username' => $datos[1],
-                    'usuario' =>  $_SESSION['usr_name']
+                    'usuario' =>  $_SESSION['usr_name'],
+                    'rol' =>  $_SESSION['usr_role']
                 );
             }
         }

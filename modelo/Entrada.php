@@ -72,7 +72,8 @@ class entrada
                     'categoria' => $datos[2],
                     'link' => $datos[3],
                     'username' => $datos[4],
-                    'usuario' => $_SESSION['usr_name']
+                    'usuario' => $_SESSION['usr_name'],
+                    'rol' =>  $_SESSION['usr_role']
                 );
             }
         }

@@ -94,8 +94,49 @@ $( document ).ready( function ()
       let template = '';
       entradas.forEach( entrada =>
       {
-        if(`${ entrada.username }`== `${ entrada.usuario }`)
+        let rol= `${ entrada.rol }`;
+        if((`${ entrada.username }`== `${ entrada.usuario }`) && (`${ entrada.rol }` == '1'))
         {
+        template += `
+        <div id="cardentrada"class="card" entTitulo="${ entrada.titulo }" entAdicional="${ entrada.adicional }" entCategoria="${ entrada.categoria }" entLink="${ entrada.link }" >
+        <div class="card-header">
+          <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">${ entrada.titulo } | ${ entrada.categoria }</font></font> </h3> 
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Colapso">
+              <i class="fas fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Eliminar">
+              <i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="card-body"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        <div>${ entrada.adicional }</div>
+        <br>
+        <center>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/${ entrada.link }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </center>
+        </font></font></div>
+        <!-- /.card-body -->
+        <div class="card-footer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        <center>subido por : ${ entrada.username }</center>
+        <div class="text-right">
+        
+         
+        <button class="editar btn btn-sm bg-success" type="button" data-toggle="modal" data-target="#crearproducto">
+        <i class="fas fa-pencil-alt"></i>
+        </button>
+   
+        <button class="borrar btn btn-sm bg-danger">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+        
+       
+      </div>
+        </font></font></div>
+        <!-- /.card-footer-->
+      </div>
+                `;
+      }else if(rol == '2'){
         template += `
         <div id="cardentrada"class="card" entTitulo="${ entrada.titulo }" entAdicional="${ entrada.adicional }" entCategoria="${ entrada.categoria }" entLink="${ entrada.link }" >
         <div class="card-header">

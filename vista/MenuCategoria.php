@@ -35,7 +35,7 @@
           </div>
           <div class="card-body">
             <div id="entradas">
-            <input type="hidden" id="idCat">
+        
 
             </div>
           </div>
