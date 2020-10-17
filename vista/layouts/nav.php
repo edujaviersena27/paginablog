@@ -89,11 +89,15 @@
     </nav>
     <!-- /.navbar -->
 
+
+
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
       <?php
+
       if (isset($_SESSION['usr_role']) != "") {
+
       ?>
         <!-- Brand Logo -->
         <a href="../vista/index2.php" class="brand-link">
@@ -118,19 +122,15 @@
               </a>
             </div>
           </div>
-        <?php
-      }
-        ?>
 
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
+
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
 
-            <?php
-            if (isset($_SESSION['usr_role']) != "") {
-            ?>
+
               <li class="nav-header">USUARIO</li>
 
               <li class="nav-item">
@@ -143,13 +143,14 @@
               </li>
 
               <li id="gestion_usuario" class="nav-item">
-                <a href="adm_usuario.php" class="nav-link">
+                <a href="../vista/adm_usuario.php" class="nav-link">
                   <i class="nav-icon fas fa-users"></i>
                   <p>
                     Gestión usuario
                   </p>
                 </a>
               </li>
+
 
               <li class="nav-header">ENTRADAS</li>
 
@@ -172,13 +173,15 @@
                   </p>
                 </a>
               </li>
-            <?php
-            }
-            ?>
 
-          </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
+
+
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        <?php
+      }
+        ?>
 
         <!-- /.sidebar -->
     </aside>

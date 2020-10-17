@@ -37,7 +37,7 @@ $(document).ready(function(){
           <!-- /.card-body -->
           <div class="card-footer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
           <div class="text-right">
-          <center>subido por : ${ entrada.usuario }</center>
+          <center>subido por : ${ entrada.username }</center>
       
         </div>
           </font></font></div>

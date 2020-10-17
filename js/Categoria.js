@@ -14,27 +14,33 @@ $(document).ready(function() {
         $.post('../controlador/CategoriaController.php',{nombre_categoria,id_editado,funcion},(response)=>{
             console.log(response);
             if(response=='add'){
-                $('#add-pre').hide('slow');
-                $('#add-pre').show(1000);
-                $('#add-pre').hide(2000);
+                $('#add').hide('slow');
+                $('#add').show(1000);
+                $('#add').hide(2000);
                 $('#form-crear-categoria').trigger('reset');
                 buscar_cat();
             }
             if(response=='noadd'){
-                $('#noadd-pre').hide('slow');
-                $('#noadd-pre').show(1000);
-                $('#noadd-pre').hide(2000);
+                $('#noadd').hide('slow');
+                $('#noadd').show(1000);
+                $('#noadd').hide(2000);
                 $('#form-crear-categoria').trigger('reset');
             }
             if(response=='edit'){
-                $('#edit-pre').hide('slow');
-                $('#edit-pre').show(1000);
-                $('#edit-pre').hide(2000);
+                $('#edit').hide('slow');
+                $('#edit').show(1000);
+                $('#edit').hide(2000);
                 $('#form-crear-categoria').trigger('reset');
                 buscar_cat();
             }
+            if(response=='noedit'){
+                $('#noedit').hide('slow');
+                $('#noedit').show(1000);
+                $('#noedit').hide(2000);
+                $('#form-crear-categoria').trigger('reset');
+            }
             edit=false;
-            })
+            });
             e.preventDefault();
         });
 
@@ -45,10 +51,11 @@ $(document).ready(function() {
                 const categorias = JSON.parse(response);
                 let template='';
                 categorias.forEach(categoria => {
-                    template+=
-                    `<tr catNombre="${categoria.categoria}">`;
                     if(`${ categoria.username }`== `${ categoria.usuario }`){
-                        template+=`
+                    template+=
+                    `<tr catNombre="${categoria.categoria}">
+                   
+                       
                             <td>
                                 <button class="editar-cat btn btn-success" title="Editar categoria" type="button" data-toggle="modal" data-target="#crearcategoria">
                                     <i class="fas fa-pencil-alt"></i>
@@ -56,17 +63,13 @@ $(document).ready(function() {
                                 <button class="borrar-cat btn btn-danger" title="Eliminar categoria">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
-                            </td>`;
-                    }else {
-                        template+=`
-                        <td>
-                         
-                        </td>`;
-                    }
-                    template+=`
+                            </td>
+                   
+                   
                             <td>${categoria.categoria}</td>
                         </tr>
                     `;
+                    }
                 });
                 $('#categorias').html(template);
             })
@@ -144,7 +147,9 @@ $(document).ready(function() {
             
             const nombre=$(elemento).attr('catNombre');
           
-            $('#nombre-categoria').val(nombre);        
+            $('#nombre-categoria').val(nombre); 
+            
+            $( '#id_editar_cat' ).val( nombre );
             edit=true;       
           })
     

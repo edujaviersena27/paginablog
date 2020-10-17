@@ -80,8 +80,34 @@ class categoria
         }
     }
 
-    function editar($nombre, $id_editado)
+    function editar($nombreCategoria, $username, $edit_cat)
     {
+        $delete = false;
+        $myfile = fopen('../Data/Categorias.dat', 'a+') or die("Error en registro, consulte con el administrador...");
+        $bkfile = fopen("../Data/Categorias.bkp", "w+") or die("No se puede abrir el archivo de trabajo!");
+        while (!feof($myfile)) {
+            $linea = fgets($myfile);
+            $datos = explode("|", $linea);
+
+            if (strcmp(trim($datos[0]), trim($edit_cat)) != 0) {
+                fputs($bkfile, $linea);
+            } else {
+                fputs($bkfile, $nombreCategoria . "|" . $username . "|" . "\n");
+                $delete = true;
+            }
+        }
+        fclose($myfile);
+        fclose($bkfile);
+        if (unlink("../Data/Categorias.dat")) {
+            rename("../Data/Categorias.bkp", "../Data/Categorias.dat");
+        }
+
+        ////					
+        if ($delete) {
+            echo 'edit';
+        } else {
+            echo 'noedit';
+        }
     }
 
     function rellenar_presentaciones()

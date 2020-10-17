@@ -1,7 +1,7 @@
 <?php
 include '../modelo/Entrada.php';
 $entrada = new entrada();
-
+$tipo_usuario= $_SESSION['usr_role'];
 if ($_POST['funcion'] == 'crear') {
     $titulo = $_POST['titulo'];
     $nombreTitulo= strtoupper($titulo);
@@ -42,4 +42,8 @@ if ($_POST['funcion'] == 'buscar_entrada') {
 if($_POST['funcion']=='borrar') {
     $titulo=$_POST['titulo'];
     $entrada->borrar($titulo);
+}
+
+if($_POST['funcion']=='tipo_usuario') {
+    echo $tipo_usuario;
 }

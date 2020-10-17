@@ -94,8 +94,10 @@ $( document ).ready( function ()
       let template = '';
       entradas.forEach( entrada =>
       {
+        if(`${ entrada.username }`== `${ entrada.usuario }`)
+        {
         template += `
-        <div class="card" entTitulo="${ entrada.titulo }" entAdicional="${ entrada.adicional }" entCateogria="${ entrada.categoria }" entLink="${ entrada.link }" >
+        <div id="cardentrada"class="card" entTitulo="${ entrada.titulo }" entAdicional="${ entrada.adicional }" entCategoria="${ entrada.categoria }" entLink="${ entrada.link }" >
         <div class="card-header">
           <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">${ entrada.titulo } | ${ entrada.categoria }</font></font> </h3> 
 
@@ -116,24 +118,24 @@ $( document ).ready( function ()
         <!-- /.card-body -->
         <div class="card-footer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
         <center>subido por : ${ entrada.username }</center>
-        <div class="text-right">`;
-        if ( ( `${ entrada.username }` ) == `${ entrada.usuario }` )
-        {
-          template += `
+        <div class="text-right">
+        
+         
         <button class="editar btn btn-sm bg-success" type="button" data-toggle="modal" data-target="#crearproducto">
         <i class="fas fa-pencil-alt"></i>
         </button>
    
         <button class="borrar btn btn-sm bg-danger">
           <i class="fas fa-trash-alt"></i>
-        </button>`;
-        }
-        template += `
+        </button>
+        
+       
       </div>
         </font></font></div>
         <!-- /.card-footer-->
       </div>
                 `;
+      }
 
       } );
 
@@ -142,22 +144,7 @@ $( document ).ready( function ()
     } );
 
 
-    funcion = 'tipo_usuario';
-    $.post( '../controlador/EntradaController.php', { funcion }, ( response ) =>
-    {
-      if ( response == 1 )
-      {
-        $( '#' ).hide();
-      }
-      else if ( response == 2 )
-      {
-        $( '#' ).hide();
-        $( '#' ).hide();
-        $( '#' ).hide();
-        $( '#' ).hide();
-        $( '#' ).hide();
-      }
-    } );
+ 
   }
 
 

@@ -23,6 +23,21 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="../js/Desplegable.js"></script>
 </body>
+<script>
+  let funcion='devolver_avatar';
+  $.post('../controlador/UsuarioController.php',{funcion},(response) => {
+    const avatar=JSON.parse(response);
+    $('#avatar4').attr('src','../img/'+avatar.avatar);
+  })
 
+   funcion='tipo_usuario';
+  $.post('../controlador/EntradaController.php',{funcion},(response) => {
+    console.log(response);
+    if(response==1){
+      $('#gestion_usuario').hide();
+    }
+   
+  });
+</script>
 
 </html>

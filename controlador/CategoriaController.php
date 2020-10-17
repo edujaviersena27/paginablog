@@ -9,6 +9,14 @@ if ($_POST['funcion'] == 'crear') {
     echo $categoria->crear($nombreCategoria, $username);
 }
 
+if ($_POST['funcion'] == 'editar') {
+    $nombre = $_POST['nombre_categoria'];
+   $nombreCategoria=strtoupper($nombre);
+   $username = $_SESSION['usr_name'];
+   $edit_cat = $_POST['id_editado'];
+    echo $categoria->editar($nombreCategoria, $username, $edit_cat);
+}
+
 
 
 if ($_POST['funcion'] == 'buscar') {
