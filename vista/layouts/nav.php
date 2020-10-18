@@ -133,6 +133,14 @@
 
               <li class="nav-header">USUARIO</li>
 
+              <li class="nav-item">
+                <a href="../vista/editar_datos_personales.php" class="nav-link">
+                  <i class="nav-icon fas fa-user-cog"></i>
+                  <p>
+                    Datos Personales
+                  </p>
+                </a>
+              </li>
 
               <li id="gestion_usuario" class="nav-item">
                 <a href="../vista/adm_usuario.php" class="nav-link">

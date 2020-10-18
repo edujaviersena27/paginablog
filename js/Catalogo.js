@@ -16,7 +16,7 @@ $(document).ready(function(){
         entradas.forEach( entrada =>
         {
           template += `
-          <div class="card" entTitulo="${entrada.titulo}" entAdicional="${entrada.adicional}" entCateogria="${entrada.categoria}" entLink="${entrada.link}" >
+          <div class="card" entTitulo="${entrada.titulo}" entAdicional="${entrada.adicional}" entCateogria="${entrada.categoria}" entLink="${entrada.link}">
           <div class="card-header">
             <h3 class="card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">${ entrada.titulo } | ${ entrada.categoria }</font></font> </h3> 
   

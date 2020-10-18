@@ -7,7 +7,7 @@
   include_once 'layouts/nav.php';
   ?>
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="background: url(../img/freezer-artwork-3980.jpg);">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">

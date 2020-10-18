@@ -103,7 +103,7 @@ $( document ).ready( function ()
 
     if(edit==false){
       funcion = 'crear_usuario';
-  }else{
+  }else if(edit==true){
       funcion='editar';
   }
    
@@ -117,6 +117,13 @@ $( document ).ready( function ()
         $( '#add' ).hide( 2000 );
         $( '#form-crear' ).trigger( 'reset' );
         buscar_datos();
+        edit=false;
+      }else
+      {
+        $( '#noadd' ).hide( 'slow' );
+        $( '#noadd' ).show( 1000 );
+        $( '#noadd' ).hide( 2000 );
+        $( '#form-crear' ).trigger( 'reset' );
       }
       if ( response == 'edit' )
       {
@@ -126,13 +133,7 @@ $( document ).ready( function ()
         $( '#form-crear' ).trigger( 'reset' );
         buscar_datos();
       }
-      else
-      {
-        $( '#noadd' ).hide( 'slow' );
-        $( '#noadd' ).show( 1000 );
-        $( '#noadd' ).hide( 2000 );
-        $( '#form-crear' ).trigger( 'reset' );
-      }
+      
       edit=false;
     } );
     e.preventDefault();
