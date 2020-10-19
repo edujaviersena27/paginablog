@@ -25,7 +25,7 @@ $( document ).ready( function ()
 
 
                 nombre = `${ usuario.nombre }`;
-               
+
 
                 if ( usuario.rol == '2' )
                 {
@@ -55,35 +55,47 @@ $( document ).ready( function ()
         edit = true;
         $.post( '../controlador/UsuarioController.php', { funcion, id_usuario }, ( response ) =>
         {
-            const usuario = JSON.parse( response );
-            $( '#telefono' ).val( usuario.telefono );
-            $( '#residencia' ).val( usuario.residencia );
-            $( '#correo' ).val( usuario.correo );
-            $( '#sexo' ).val( usuario.sexo );
-            $( '#adicional' ).val( usuario.adicional );
+            console.log( response );
+            let nombre = '';
+            let correo = '';
+            const usuarios = JSON.parse( response );
+
+            usuarios.forEach( usuario =>
+            {
+
+                nombre = `${ usuario.nombre }`;
+                correo = `${ usuario.email }`;
+
+            } );
+
+            $( '#nombre' ).val( nombre );
+            $( '#correo' ).val( correo );
         } )
     } );
+
     $( '#form-usuario' ).submit( e =>
     {
         if ( edit == true )
         {
-            let telefono = $( '#telefono' ).val();
-            let residencia = $( '#residencia' ).val();
+
+            let nombre = $( '#nombre' ).val();
             let correo = $( '#correo' ).val();
-            let sexo = $( '#sexo' ).val();
-            let adicional = $( '#adicional' ).val();
+
             funcion = 'editar_usuario';
-            $.post( '../controlador/UsuarioController.php', { id_usuario, funcion, telefono, residencia, correo, sexo, adicional }, ( response ) =>
+            $.post( '../controlador/UsuarioController.php', { id_usuario, funcion, nombre, correo }, ( response ) =>
             {
+                console.log( response );
                 if ( response == 'editado' )
                 {
                     $( '#editado' ).hide( 'slow' );
                     $( '#editado' ).show( 1000 );
                     $( '#editado' ).hide( 2000 );
                     $( '#form-usuario' ).trigger( 'reset' );
+
                 }
                 edit = false;
                 buscar_usuario( id_usuario );
+
             } )
         }
         else

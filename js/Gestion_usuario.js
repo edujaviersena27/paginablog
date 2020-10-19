@@ -132,6 +132,7 @@ $( document ).ready( function ()
         $( '#edit' ).hide( 2000 );
         $( '#form-crear' ).trigger( 'reset' );
         buscar_datos();
+        edit=false;
       }
       
       edit=false;

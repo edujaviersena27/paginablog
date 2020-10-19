@@ -7,17 +7,29 @@ class categoria
 
     function crear($nombre, $username)
     {
-
+        $ok=0;
         $archivo = fopen('../Data/Categorias.dat', 'a+') or die("Error en registro, consulte con el administrador...");
         while (!feof($archivo)) {
-            if ($nombre != null) {
-                fputs($archivo, $nombre . "|" . $username . "|" . "\n");
 
-                return 'add';
+            $linea = fgets($archivo);
+            $datos = explode("|", $linea);
+
+            if ($nombre == $datos[0]) {
+                $ok = 1;
             }
         }
-
         fclose($archivo);
+
+        if ($ok == 1)
+        {
+            return 'noadd';
+        }
+        else
+        {
+            $archivo = fopen('../Data/Categorias.dat', 'a+') or die("Error en registro, consulte con el administrador...");
+            fputs($archivo, $nombre . "|" . $username . "|" . "\n");
+            return 'add';
+        }
     }
 
     function buscar()

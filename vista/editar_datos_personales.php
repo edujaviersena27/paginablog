@@ -164,7 +164,8 @@ if (isset($_SESSION['usr_role']) != "") {
 
                 </div>
                 <div class="card-footer">
-                  <p class="text-muted">Cuidado con ingresar datos erroneos</p>
+                  <p class="text-muted">Cuidado con ingresar datos erroneos!!!</p>
+                  <p class="text-muted">Una vez echo los cambios deberá cerrar la sesion e iniciarla nuevamente.</p>
                 </div>
               </div>
             </div>

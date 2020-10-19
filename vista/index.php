@@ -62,6 +62,6 @@
   include_once 'layouts/footer.php';
   ?>
 
-
+<script src="../js/Desplegable.js"></script>
 
 

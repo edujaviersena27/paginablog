@@ -181,4 +181,35 @@ class Usuario
 
         return $jsonstring;
     }
+
+    function editar_datos($id_usuario,$nombre,$correo)
+    {
+        $delete = false;
+        $myfile = fopen('../Data/Registro.dat', 'a+') or die("Error en registro, consulte con el administrador...");
+        $bkfile = fopen("../Data/Registro.bkp", "w+") or die("No se puede abrir el archivo de trabajo!");
+        while (!feof($myfile)) {
+            $linea = fgets($myfile);
+            $datos = explode("|", $linea);
+
+            if (strcmp(trim($datos[0]), trim($id_usuario)) != 0) {
+                fputs($bkfile, $linea);
+            } else {
+                fputs($bkfile, $nombre . "|" . $correo . "|" . $datos[2] . "|" . $datos[3] . "|" . $datos[4] . "\n");
+                $delete = true;
+            }
+        }
+        fclose($myfile);
+        fclose($bkfile);
+      
+
+        ////					
+        if ($delete) {
+            if (unlink("../Data/Registro.dat")) {
+                rename("../Data/Registro.bkp", "../Data/Registro.dat");
+            }
+            echo 'editado';
+        } else {
+            echo 'noeditado';
+        }
+    }
 }
