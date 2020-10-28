@@ -84,13 +84,14 @@ $( document ).ready( function ()
     e.preventDefault();
   } );
 
-  function buscar_entrada ()
+  function buscar_entrada (consulta)
   {
     funcion = "buscar";
-    $.post( '../controlador/EntradaController.php', { funcion }, ( response ) =>
+    $.post( '../controlador/EntradaController.php', { funcion, consulta }, ( response ) =>
     {
       console.log( response );
       const entradas = JSON.parse( response );
+      entradas.reverse();
       let template = '';
       entradas.forEach( entrada =>
       {
@@ -177,10 +178,11 @@ $( document ).ready( function ()
       </div>
                 `;
       }
-
+    
       } );
+      
 
-      $( '#entradas' ).html( template );
+      $( '#entradas' ).html( template);
 
     } );
 

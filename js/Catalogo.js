@@ -5,13 +5,15 @@ $(document).ready(function(){
     buscar_entradas();
    
 
-    function buscar_entradas ()
+    function buscar_entradas (consulta)
     {
       funcion = "buscar_entrada";
-      $.post( '../controlador/EntradaController.php', { funcion }, ( response ) =>
+      $.post( '../controlador/EntradaController.php', { funcion, consulta }, ( response ) =>
       {
         console.log( response );
         const entradas = JSON.parse( response );
+        entradas.reverse();
+       
         let template = '';
         entradas.forEach( entrada =>
         {

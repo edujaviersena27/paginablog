@@ -24,11 +24,13 @@ if (isset($_POST['login'])) {
     /// Fabian Lopez|fabian.enrique.lopez@gmail.com|0|1|5f4dcc3b5aa765d61d8327deb882cf99 //
     $linea = fgets($archivo);
     $datos = explode("|", $linea);
+    if($datos[0]!=null && $datos[1]!=null && $datos[2]!=null && $datos[3]!=null && $datos[4]!=null) {
     $lastname = $datos[0];
     $mail = $datos[1];
     $active = $datos[2];
     $role = $datos[3];
     $passwd = $datos[4];
+    }
  
     //		var_dump($inea);
     //		var_dump($email);
@@ -47,7 +49,12 @@ if (isset($_POST['login'])) {
   ////////////////////////////
   //	echo 'valor $ok'.var_dump($ok);
   if ($ok == 0) {
-    $errormsg = "Revisa los datos!!!";
+    $errormsg = '
+		<div class="alert alert-danger text-center">
+		    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		    <strong>Error de ingreso.!</strong> Verifica tus datos.!!!
+		</div>
+		';
   } elseif ($ok == 2) {
     $errormsg = "Usuario Inactivo!!!";
   } else {
@@ -130,7 +137,7 @@ include_once 'layouts/nav.php';
               <!-- /.col -->
             </div>
           </form>
-
+          <span class="text-danger"><?php if (isset($errormsg)) { echo $errormsg; } ?></span>
           <div class="social-auth-links text-center mb-3">
             <p>- OR -</p>
             <a href="#" class="btn btn-block btn-primary">

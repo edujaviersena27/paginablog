@@ -50,39 +50,75 @@ class entrada
 
     function buscar()
     {
+        if (!empty($_POST['consulta'])) {
+            $consulta = $_POST['consulta'];
+            $json = array();
 
-        $json = array();
+            $archivo = fopen('../Data/Entradas.dat', 'r+') or die("Error de apertura de archivo, consulte con el administrador...");
+            while (!feof($archivo)) {
 
-        $archivo = fopen('../Data/Entradas.dat', 'r+') or die("Error de apertura de archivo, consulte con el administrador...");
-        while (!feof($archivo)) {
-
-            $linea = fgets($archivo);
-            $datos = explode("|", $linea);
-
-
-
-            if ($datos[0] != null && $datos[1] != null && $datos[2] != null && $datos[3] != null && $datos[4] != null) {
+                $linea = fgets($archivo);
+                $datos = explode("|", $linea);
 
 
 
-                $json[] = array(
+                if ($datos[0] != null && $datos[1] != null && $datos[2] != null && $datos[3] != null && $datos[4] != null) {
 
-                    'titulo' => $datos[0],
-                    'adicional' => $datos[1],
-                    'categoria' => $datos[2],
-                    'link' => $datos[3],
-                    'username' => $datos[4],
-                    'usuario' => $_SESSION['usr_name'],
-                    'rol' =>  $_SESSION['usr_role']
-                );
+                    if (strcmp(trim($datos[0]), trim($consulta)) == 0) {
+
+                        $json[] = array(
+
+                            'titulo' => $datos[0],
+                            'adicional' => $datos[1],
+                            'categoria' => $datos[2],
+                            'link' => $datos[3],
+                            'username' => $datos[4],
+                            'usuario' => $_SESSION['usr_name'],
+                            'rol' =>  $_SESSION['usr_role']
+                        );
+                    }
+                }
             }
+            fclose($archivo);
+
+            $jsonstring = json_encode($json);
+
+
+            return $jsonstring;
+        } else {
+            $json = array();
+
+            $archivo = fopen('../Data/Entradas.dat', 'r+') or die("Error de apertura de archivo, consulte con el administrador...");
+            while (!feof($archivo)) {
+
+                $linea = fgets($archivo);
+                $datos = explode("|", $linea);
+
+
+
+                if ($datos[0] != null && $datos[1] != null && $datos[2] != null && $datos[3] != null && $datos[4] != null) {
+
+
+
+                    $json[] = array(
+
+                        'titulo' => $datos[0],
+                        'adicional' => $datos[1],
+                        'categoria' => $datos[2],
+                        'link' => $datos[3],
+                        'username' => $datos[4],
+                        'usuario' => $_SESSION['usr_name'],
+                        'rol' =>  $_SESSION['usr_role']
+                    );
+                }
+            }
+            fclose($archivo);
+
+            $jsonstring = json_encode($json);
+
+
+            return $jsonstring;
         }
-        fclose($archivo);
-
-        $jsonstring = json_encode($json);
-
-
-        return $jsonstring;
     }
 
 
@@ -120,6 +156,4 @@ class entrada
             echo 'noborrado';
         }
     }
-
 }
-

@@ -118,7 +118,8 @@ $( document ).ready( function ()
         $( '#form-crear' ).trigger( 'reset' );
         buscar_datos();
         edit=false;
-      }else
+      }
+      if ( response == 'noadd' )
       {
         $( '#noadd' ).hide( 'slow' );
         $( '#noadd' ).show( 1000 );

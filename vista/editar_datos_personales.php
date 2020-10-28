@@ -151,7 +151,7 @@ if (isset($_SESSION['usr_role']) != "") {
                     <div class="form-group row">
                       <label for="correo" class="col-sm-2 col-form-label">Correo</label>
                       <div class="col-sm-10">
-                        <input type="text" id="correo" class="form-control">
+                        <input type="text" id="correo" class="form-control" disabled>
                       </div>
                     </div>
                  

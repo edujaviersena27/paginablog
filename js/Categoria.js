@@ -49,6 +49,7 @@ $(document).ready(function() {
             $.post('../controlador/CategoriaController.php',{funcion},(response) => {
                 console.log(response);
                 const categorias = JSON.parse(response);
+                
                 let template='';
                 categorias.forEach(categoria => {
 

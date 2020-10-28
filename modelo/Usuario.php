@@ -162,16 +162,16 @@ class Usuario
             if ($datos[0] != null && $datos[1] != null && $datos[2] != null && $datos[3] != null && $datos[4] != null) {
 
 
-                if(strcmp(trim($datos[0]), trim($id)) == 0)
-                $json[] = array(
+                if (strcmp(trim($datos[0]), trim($id)) == 0)
+                    $json[] = array(
 
-                    'nombre' => $datos[0],
-                    'email' => $datos[1],
-                    'activar' => $datos[2],
-                    'rol' => $datos[3],
-                    'pass' => $datos[4],
+                        'nombre' => $datos[0],
+                        'email' => $datos[1],
+                        'activar' => $datos[2],
+                        'rol' => $datos[3],
+                        'pass' => $datos[4]
 
-                );
+                    );
             }
         }
         fclose($archivo);
@@ -182,7 +182,7 @@ class Usuario
         return $jsonstring;
     }
 
-    function editar_datos($id_usuario,$nombre,$correo)
+    function editar_datos($id_usuario, $nombre, $correo)
     {
         $delete = false;
         $myfile = fopen('../Data/Registro.dat', 'a+') or die("Error en registro, consulte con el administrador...");
@@ -190,17 +190,18 @@ class Usuario
         while (!feof($myfile)) {
             $linea = fgets($myfile);
             $datos = explode("|", $linea);
-
-            if (strcmp(trim($datos[0]), trim($id_usuario)) != 0) {
-                fputs($bkfile, $linea);
-            } else {
-                fputs($bkfile, $nombre . "|" . $correo . "|" . $datos[2] . "|" . $datos[3] . "|" . $datos[4] . "\n");
-                $delete = true;
+            if ($datos[0] != null) {
+                if (strcmp(trim($datos[0]), trim($id_usuario)) != 0) {
+                    fputs($bkfile, $linea);
+                } else {
+                    fputs($bkfile, $nombre . "|" . $correo . "|" . $datos[2] . "|" . $datos[3] . "|" . $datos[4]);
+                    $delete = true;
+                }
             }
         }
         fclose($myfile);
         fclose($bkfile);
-      
+
 
         ////					
         if ($delete) {
